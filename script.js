@@ -1,3 +1,32 @@
+console.log('%c🚀 ImpulsoTech', 'font-size: 48px; font-weight: bold; background: linear-gradient(135deg, #8B5CF6, #22D3EE); -webkit-background-clip: text; -webkit-text-fill-color: transparent;');
+
+console.log(`%c
+    ▄▄▄▄▄▄▄
+   ▐░░░░░░░▌
+   ▐░█▀▀▀█░▌
+   ▐░▌   ▐░▌
+   ▐░█▄▄▄█░▌
+   ▐░░░░░░░▌
+   ▐░▌   ▐░▌
+  ▄▀░▌   ▐░▀▄
+ ▐░░░▌   ▐░░░▌
+  ▀▄▄▀   ▀▄▄▀
+`, 'color: #8B5CF6; font-family: monospace;');
+
+console.log('%c👀 Curioso, hein?', 'font-size: 18px; color: #22D3EE; font-weight: bold;');
+console.log('%cSe você está aqui, provavelmente é dev... ou muito curioso!', 'font-size: 14px; color: #94A3B8;');
+
+console.log('%c💼 Estamos contratando!', 'font-size: 16px; color: #10B981; font-weight: bold;');
+console.log('%cManda um oi: contato@impulsotech.dev', 'font-size: 14px; color: #94A3B8;');
+
+console.log('%c⚠️ Aviso:', 'font-size: 14px; color: #F59E0B; font-weight: bold;');
+console.log('%cSe veio tentar copiar, relaxa... o código é bonito, mas a mágica está na execução. 😉', 'font-size: 12px; color: #94A3B8;');
+
+console.log('%c🔧 Stack:', 'font-size: 14px; color: #8B5CF6; font-weight: bold;');
+console.log('%cHTML + CSS + JS puro. Às vezes, menos é mais.', 'font-size: 12px; color: #94A3B8;');
+
+console.log('%c───────────────────────────────', 'color: #374151;');
+
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
