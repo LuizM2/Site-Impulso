@@ -84,57 +84,64 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
     
+    initCaseCarousel();
+});
+
+function initCaseCarousel() {
     const slides = document.querySelectorAll('.case-slide');
     const badge = document.getElementById('caseBadge');
     const dotsContainer = document.getElementById('caseDots');
     const prevBtn = document.getElementById('casePrev');
     const nextBtn = document.getElementById('caseNext');
+    
+    if (!slides.length || !dotsContainer || !prevBtn || !nextBtn) return;
+    
     let currentSlide = 0;
     let autoSlideInterval;
     
-    if (slides.length > 0 && dotsContainer) {
-        slides.forEach((_, index) => {
-            const dot = document.createElement('span');
-            dot.classList.add('case-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(index));
-            dotsContainer.appendChild(dot);
-        });
-        
-        function updateSlide() {
-            slides.forEach((slide, index) => {
-                slide.classList.remove('active');
-                dotsContainer.children[index].classList.remove('active');
-            });
-            slides[currentSlide].classList.add('active');
-            dotsContainer.children[currentSlide].classList.add('active');
-            badge.textContent = slides[currentSlide].dataset.title;
+    for (let i = 0; i < slides.length; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('case-dot');
+        if (i === 0) dot.classList.add('active');
+        (function(index) {
+            dot.onclick = function() { goToSlide(index); };
+        })(i);
+        dotsContainer.appendChild(dot);
+    }
+    
+    function showSlide(index) {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove('active');
+            dotsContainer.children[i].classList.remove('active');
         }
-        
-        function goToSlide(index) {
-            currentSlide = index;
-            updateSlide();
-            resetAutoSlide();
-        }
-        
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlide();
-        }
-        
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            updateSlide();
-        }
-        
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            autoSlideInterval = setInterval(nextSlide, 5000);
-        }
-        
-        prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
-        nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
-        
+        slides[index].classList.add('active');
+        dotsContainer.children[index].classList.add('active');
+        if (badge) badge.textContent = slides[index].getAttribute('data-title');
+    }
+    
+    function goToSlide(index) {
+        currentSlide = index;
+        showSlide(currentSlide);
+        resetAutoSlide();
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
         autoSlideInterval = setInterval(nextSlide, 5000);
     }
-});
+    
+    prevBtn.onclick = function() { prevSlide(); resetAutoSlide(); };
+    nextBtn.onclick = function() { nextSlide(); resetAutoSlide(); };
+    
+    autoSlideInterval = setInterval(nextSlide, 5000);
+}
