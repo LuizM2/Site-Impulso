@@ -83,4 +83,58 @@ document.addEventListener('DOMContentLoaded', function() {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+    
+    const slides = document.querySelectorAll('.case-slide');
+    const badge = document.getElementById('caseBadge');
+    const dotsContainer = document.getElementById('caseDots');
+    const prevBtn = document.getElementById('casePrev');
+    const nextBtn = document.getElementById('caseNext');
+    let currentSlide = 0;
+    let autoSlideInterval;
+    
+    if (slides.length > 0 && dotsContainer) {
+        slides.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('case-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                dotsContainer.children[index].classList.remove('active');
+            });
+            slides[currentSlide].classList.add('active');
+            dotsContainer.children[currentSlide].classList.add('active');
+            badge.textContent = slides[currentSlide].dataset.title;
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlide();
+            resetAutoSlide();
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlide();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlide();
+        }
+        
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+        nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+        
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
 });
