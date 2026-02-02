@@ -1,0 +1,222 @@
+# Prompt de Revisão de Textos - Landing Page ImpulsoTech
+
+## Contexto para o Designer/Copywriter
+
+A ImpulsoTech é uma agência de desenvolvimento que combina **vibe coding, no-code e low-code** com stacks profissionais completas. Diferente de freelancers no-code ou desenvolvedoras tradicionais, oferecemos:
+
+- Velocidade de entrega de no-code com qualidade de código profissional
+- Domínio de ferramentas modernas (Bubble, N8N, Supabase) + desenvolvimento tradicional quando necessário
+- Atualização constante com padrões internacionais de desenvolvimento
+- Capacidade de escalar de MVP para produção enterprise
+
+---
+
+## 🔴 Problemas Identificados nos Textos Atuais
+
+### 1. Headline Principal
+**Atual:** "Impulsione seu negócio com tecnologia no-code e automatizações inteligentes."
+
+**Problemas:**
+- Muito genérico (qualquer agência no-code usa esse discurso)
+- Não menciona vibe coding (diferencial atual do mercado)
+- Não transmite profissionalismo técnico
+- Palavra "impulsione" é óbvia pelo nome da empresa (redundante)
+
+### 2. Subtítulo Principal
+**Atual:** "Transformamos processos complexos em soluções simples. Desde 2023 ajudando empresas a crescer com inovação, sem complicação"
+
+**Problemas:**
+- "Sem complicação" soa amador/informal demais para B2B
+- "Desde 2023" destaca que a empresa é muito nova (pode ser desvantagem percebida)
+- "Soluções simples" pode parecer que entregam trabalho básico
+
+### 3. Repetições Excessivas
+- "Impulsione" aparece no headline e na seção de metodologia
+- "Transformamos processos complexos em soluções simples" aparece duas vezes
+
+### 4. Seção de Clientes
+**Atual:** "Alguns dos nossos clientes que já contribuíram conosco"
+
+**Problema:** Frase confusa - clientes não "contribuem", eles contratam/confiam. Parece tradução mal feita.
+
+### 5. Tabela Comparativa
+**Atual:** Tudo ✓ para ImpulsoTech, tudo ✕ para concorrentes
+
+**Problema:** Polarização total não é crível. Nenhuma empresa de software oferece ZERO desses itens. Prejudica a credibilidade.
+
+### 6. Descrições da Equipe
+**Atual:** "CTO" + "Chief Technology Officer - Arquiteto de Soluções"
+
+**Problema:** Redundância (CTO = Chief Technology Officer). Subtítulos não agregam valor.
+
+### 7. Falta de Prova Social Específica
+- Sem números concretos (projetos entregues, % de economia, tempo de entrega)
+- Sem depoimentos de clientes
+- Sem cases com métricas de resultado
+
+---
+
+## ✅ Sugestões de Novos Textos
+
+### Headline Principal (Opções)
+
+**Opção A - Foco em Velocidade + Qualidade:**
+> "Seu app no ar em semanas, não meses. Com código profissional."
+
+**Opção B - Foco em Vibe Coding:**
+> "Desenvolvemos seu software com IA, no-code e código profissional — a stack certa para cada projeto."
+
+**Opção C - Foco em Resultado:**
+> "Da ideia ao produto digital funcionando. Rápido, escalável e com suporte real."
+
+**Opção D - Mais Direto:**
+> "Sites, apps e automações entregues com velocidade de startup e robustez enterprise."
+
+---
+
+### Subtítulo Principal (Opções)
+
+**Opção A:**
+> "Combinamos vibe coding, ferramentas no-code e desenvolvimento tradicional para entregar projetos até 3x mais rápido — sem abrir mão de qualidade, escalabilidade e manutenção profissional."
+
+**Opção B:**
+> "Não somos uma fábrica de código nem uma agência de templates. Somos arquitetos de soluções digitais que escolhem a melhor tecnologia para cada desafio do seu negócio."
+
+**Opção C:**
+> "Equipe multidisciplinar que domina desde Bubble e N8N até infraestrutura em nuvem e APIs customizadas. Você recebe velocidade de entrega com arquitetura para crescer."
+
+---
+
+### Seção de Metodologia
+
+**Título Atual:** "Impulsione seu negócio com tecnologia no-code"
+
+**Sugestão:**
+> "Como transformamos sua ideia em produto digital"
+
+ou
+
+> "Nossa metodologia: velocidade sem atalhos"
+
+**Texto de Apoio Sugerido:**
+> "Cada projeto começa com uma análise profunda do seu negócio. Escolhemos a stack ideal entre no-code, low-code ou desenvolvimento tradicional com base em três critérios: prazo, orçamento e escalabilidade futura. Você não fica preso a uma única tecnologia — fica com a solução certa."
+
+---
+
+### Cards de Serviços (Revisados)
+
+**Design de Experiência**
+> "Interfaces que funcionam para usuários reais — não apenas bonitas no Dribbble. Testamos com pessoas de verdade, não com suposições de designers."
+
+**Sistemas Web**
+> "Aplicações web que aguentam crescimento. Arquitetura pensada para integrar com seus sistemas atuais e escalar quando o negócio decolar."
+
+**Aplicativos**
+> "Apps nativos ou híbridos com experiência fluida. Do MVP para validação até a versão pronta para milhares de usuários."
+
+**Inteligência Artificial**
+> "IA aplicada com propósito: chatbots que resolvem problemas reais, automações que economizam horas, análises que geram decisões — não buzzwords."
+
+---
+
+### Seção de Clientes
+
+**Título Atual:** "Alguns dos nossos clientes que já contribuíram conosco"
+
+**Sugestão:**
+> "Empresas que confiam na ImpulsoTech"
+
+ou
+
+> "Projetos que tiramos do papel"
+
+---
+
+### Tabela Comparativa (Revisada)
+
+Em vez de tudo ✓ vs tudo ✕, usar uma abordagem mais crível:
+
+| Critério | ImpulsoTech | Agências Tradicionais | Freelancers No-Code |
+|----------|-------------|----------------------|---------------------|
+| Prazo de entrega | Semanas | Meses | Semanas |
+| Escalabilidade | Alta | Alta | Limitada |
+| Custo inicial | Médio | Alto | Baixo |
+| Suporte pós-entrega | ✓ Contínuo | ✓ Por contrato | ✕ Variável |
+| Flexibilidade de stack | ✓ | ✕ | ✕ |
+| Documentação técnica | ✓ | ✓ | ✕ |
+
+*Posicionamento: melhor custo-benefício entre velocidade, qualidade e preço.*
+
+---
+
+### Descrições da Equipe (Revisadas)
+
+**Luiz Melo**
+- Cargo: CTO & Arquiteto de Soluções
+- Subtítulo: "Transforma complexidade em sistemas que funcionam"
+
+**Álvaro Medeiros**
+- Cargo: Desenvolvedor FullStack
+- Subtítulo: "Do banco de dados à interface — código limpo e escalável"
+
+**Kevin Arend**
+- Cargo: Product Owner
+- Subtítulo: "Conecta visão de negócio com entrega técnica"
+
+**Erivanildo Martiniano**
+- Cargo: UI/UX Designer
+- Subtítulo: "Design que converte, não apenas impressiona"
+
+**Fellipe Lope**
+- Cargo: Documentação Técnica
+- Subtítulo: "Seu projeto explicado para qualquer desenvolvedor assumir"
+
+---
+
+### CTA Principal
+
+**Atual:** "QUERO UMA CONSULTORIA GRATUITA"
+
+**Opções:**
+- "QUERO UM DIAGNÓSTICO GRATUITO"
+- "AGENDAR CONVERSA DE 15 MIN"
+- "VER SE MEU PROJETO É VIÁVEL"
+- "RECEBER PROPOSTA EM 48H"
+
+---
+
+### Seção de Prova Social (NOVA - Adicionar)
+
+Incluir uma seção com métricas reais, por exemplo:
+
+> **+40 projetos entregues** | **12 clientes ativos** | **Média de 6 semanas por MVP** | **98% de satisfação**
+
+E/ou depoimentos curtos de clientes reais com foto e cargo.
+
+---
+
+## 📋 Checklist de Implementação
+
+- [ ] Substituir headline por versão mais diferenciada
+- [ ] Remover "desde 2023" ou reformular (ex: "mais de 40 projetos entregues")
+- [ ] Eliminar repetições de "impulsione" e "transformamos processos"
+- [ ] Corrigir frase da seção de clientes
+- [ ] Refazer tabela comparativa com dados mais críveis
+- [ ] Simplificar subtítulos da equipe (remover redundâncias)
+- [ ] Adicionar seção de números/métricas
+- [ ] Considerar adicionar 1-2 depoimentos de clientes
+- [ ] Mencionar "vibe coding" ou "desenvolvimento com IA" em algum ponto
+
+---
+
+## 🎯 Posicionamento Sugerido (Resumo)
+
+**Antes:** "Agência no-code que simplifica"
+**Depois:** "Time técnico completo que usa a stack certa para cada projeto — do no-code ao código tradicional — com velocidade de startup e qualidade enterprise"
+
+**Diferenciais a destacar:**
+1. Flexibilidade de stack (não são presos a uma ferramenta)
+2. Velocidade + escalabilidade (o melhor dos dois mundos)
+3. Equipe multidisciplinar real (não é one-man-show)
+4. Suporte e documentação profissional
+5. Atualização com tendências (vibe coding, IA aplicada)
