@@ -42,23 +42,53 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     const contactForm = document.getElementById('contact-form');
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxvSr5vYHexFYBC2qviZWWrFlhJJiQgar2UEc3ykROfFsNmpsSu8yNk912YR1azGa24Vg/exec';
     
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            
             const formData = new FormData(contactForm);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
+            const data = {
+                nome: formData.get('name'),
+                email: formData.get('email'),
+                telefone: formData.get('whatsapp'),
+                mensagem: formData.get('challenge')
+            };
             
-            const whatsappNumber = '5521968189174';
-            const message = `Olá! Vim pelo site ImpulsoTech.%0A%0A*Nome:* ${data.name}%0A*Email:* ${data.email}%0A*WhatsApp:* ${data.whatsapp}%0A*Desafio:* ${data.challenge}`;
-            
-            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-            
-            contactForm.reset();
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                submitBtn.textContent = 'Enviado com sucesso!';
+                submitBtn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+                contactForm.reset();
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+                
+            } catch (error) {
+                submitBtn.textContent = 'Erro ao enviar';
+                submitBtn.style.background = 'linear-gradient(135deg, #EF4444, #DC2626)';
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }
         });
     }
     
