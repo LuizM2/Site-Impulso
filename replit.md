@@ -31,8 +31,11 @@ Este projeto é um clone do site ImpulsoTech originalmente criado no Figma. O si
 O projeto roda com um servidor Python HTTP simples na porta 5000.
 
 ## Recent Changes
-- 02/02/2026: Integração do diferencial "Sistema Impulso"
-  - Badge "🚀 Powered by Sistema Impulso" no hero section
+- 02/02/2026: Renomeação de "Sistema Impulso" para "Impulso Studio"
+  - Links clicáveis para https://studio.impulsotech.dev
+  - Nova logo "Impulso Tech" aplicada
+- 02/02/2026: Integração do diferencial "Impulso Studio"
+  - Badge "🚀 Powered by Impulso Studio" no hero section
   - Nova linha destacada na tabela comparativa: "Ferramenta própria de gestão"
   - Texto de impacto após a tabela: "+66.000 linhas de código"
   - Carrossel de ferramentas simplificado para texto (Bubble, Wappler, Lovable)

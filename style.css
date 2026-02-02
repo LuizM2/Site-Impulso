@@ -193,6 +193,24 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--accent-purple);
 }
 
+.powered-badge a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.powered-badge a:hover strong {
+    color: var(--accent-cyan);
+}
+
+.check a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.check a:hover {
+    color: var(--accent-cyan);
+}
+
 .btn-primary {
     display: inline-block;
     background: linear-gradient(135deg, #22D3EE, #8B5CF6);
