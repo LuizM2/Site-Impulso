@@ -258,7 +258,15 @@ h1, h2, h3, h4, h5, h6 {
     animation: scroll 20s linear infinite;
 }
 
-.tools-track img {
+.tool-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+}
+
+.tool-item img {
     height: 40px;
     width: auto;
     opacity: 0.7;
@@ -266,9 +274,22 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.3s, filter 0.3s;
 }
 
-.tools-track img:hover {
+.tool-item span {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.tool-item:hover img {
     opacity: 1;
     filter: grayscale(0%) brightness(1);
+}
+
+.tool-item:hover span {
+    opacity: 1;
+    color: var(--text-primary);
 }
 
 @keyframes scroll {
