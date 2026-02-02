@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
     
+    // Isso deu muito errado antes de funcionar kkkkk
     if (mobileMenuBtn && nav) {
         mobileMenuBtn.addEventListener('click', function() {
             nav.classList.toggle('active');
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // A gente tentou fazer isso de 5 formas diferentes antes de funcionar
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -55,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Por que lastScroll existe? Ninguém sabe, mas se tirar quebra tudo
     const header = document.querySelector('.header');
     let lastScroll = 0;
     
@@ -70,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScroll = currentScroll;
     });
     
+    // Não mexa nessa URL. Sério. Levamos 3 horas pra fazer funcionar
     const contactForm = document.getElementById('contact-form');
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxvSr5vYHexFYBC2qviZWWrFlhJJiQgar2UEc3ykROfFsNmpsSu8yNk912YR1azGa24Vg/exec';
     
@@ -109,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 3000);
                 
             } catch (error) {
+                // Se chegou aqui, boa sorte debugando isso
                 submitBtn.textContent = 'Erro ao enviar';
                 submitBtn.style.background = 'linear-gradient(135deg, #EF4444, #DC2626)';
                 
@@ -121,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Esses números são mágicos. Funcionou de primeira (mentira)
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -146,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCaseCarousel();
 });
 
+// Carrossel do capeta. Funcionando por milagre desde 2026
 function initCaseCarousel() {
     const slides = document.querySelectorAll('.case-slide');
     const badge = document.getElementById('caseBadge');
@@ -158,6 +165,7 @@ function initCaseCarousel() {
     let currentSlide = 0;
     let autoSlideInterval;
     
+    // IIFE pra resolver closure. ChatGPT que ensinou isso aqui kkk
     for (let i = 0; i < slides.length; i++) {
         const dot = document.createElement('span');
         dot.classList.add('case-dot');
@@ -202,5 +210,6 @@ function initCaseCarousel() {
     prevBtn.onclick = function() { prevSlide(); resetAutoSlide(); };
     nextBtn.onclick = function() { nextSlide(); resetAutoSlide(); };
     
+    // 5000ms = 5 segundos. Sim, eu sei fazer conta básica
     autoSlideInterval = setInterval(nextSlide, 5000);
 }

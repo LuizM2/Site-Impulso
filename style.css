@@ -19,6 +19,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Scrollbar customizada porque sim. Gastamos 2 horas nisso */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -232,6 +233,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--accent-cyan);
 }
 
+/* Botão principal. Se mudar a cor, o designer chora */
 .btn-primary {
     display: inline-block;
     background: linear-gradient(135deg, #22D3EE, #8B5CF6);
@@ -256,6 +258,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
 }
 
+/* Efeito de brilho. Ficou bonito né? A gente também achou */
 .glow-effect {
     position: absolute;
     width: 400px;
@@ -275,6 +278,7 @@ h1, h2, h3, h4, h5, h6 {
     animation: levitate 4s ease-in-out infinite;
 }
 
+/* Animação do astronauta. Parece fácil né? Não é */
 @keyframes levitate {
     0%, 100% {
         transform: translateY(0) rotate(0deg);
@@ -511,6 +515,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 8px;
 }
 
+/* Números grandes pra impressionar. Marketing 101 */
 .metric-number {
     font-size: 48px;
     font-weight: 700;
@@ -538,6 +543,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Seção de clientes. Carrossel infinito que quase nos enlouqueceu */
 .clients {
     padding: 100px 0;
 }
