@@ -1,0 +1,208 @@
+# Prompt Complementar - Diferencial Sistema Impulso
+
+## 🎯 Por que isso é um diferencial BRUTAL
+
+A maioria das agências no-code/low-code usa ferramentas de terceiros (Notion, Asana, Monday, Jira) para gerenciar seus próprios projetos. Vocês **construíram a própria ferramenta** — e isso comunica várias coisas poderosas:
+
+| Mensagem Implícita | Impacto no Cliente |
+|-------------------|-------------------|
+| "Praticamos o que vendemos" | Credibilidade técnica |
+| "Sabemos construir sistemas complexos" | Confiança em projetos grandes |
+| "Temos processos maduros" | Segurança na entrega |
+| "Investimos em qualidade" | Percepção de valor premium |
+| "Não dependemos de terceiros" | Autonomia e controle |
+
+**Conceito de marketing:** "Dogfooding" — empresas que usam seus próprios produtos são mais confiáveis.
+
+---
+
+## 📊 Métricas para Impressionar (sem ser técnico demais)
+
+### Para o Site (público geral)
+Evite jargões. Traduza complexidade em benefícios:
+
+| Métrica Técnica | Tradução para Marketing |
+|-----------------|------------------------|
+| 47 tabelas PostgreSQL | "Sistema robusto com dados estruturados" |
+| 278 endpoints de API | "Integração com qualquer ferramenta" |
+| 66.000+ linhas de código | "Plataforma enterprise-grade" |
+| 146 componentes React | "Interface moderna e responsiva" |
+| 25 páginas funcionais | "Solução completa de ponta a ponta" |
+| WebSocket real-time | "Comunicação instantânea entre equipe" |
+| PWA com push notifications | "Acesse de qualquer dispositivo" |
+| Multi-tenancy | "Pronto para múltiplas empresas" |
+
+### Números que Vendem
+- **+66.000 linhas de código** próprio
+- **47 módulos integrados** 
+- **Sistema usado em +40 projetos reais**
+- **Desenvolvido e refinado desde 2023**
+
+---
+
+## ✍️ Sugestões de Copy para o Site
+
+### Opção 1: Seção Dedicada (Nova)
+
+**Título:**
+> "Usamos nossa própria tecnologia para entregar a sua"
+
+**Subtítulo:**
+> "Não dependemos de Jira, Monday ou Asana. Construímos o Sistema Impulso — nossa plataforma de gestão de projetos com +66.000 linhas de código — e é com ela que garantimos entregas no prazo."
+
+**Bullets:**
+- ✓ Time tracking com evidências obrigatórias
+- ✓ Chat em tempo real integrado ao projeto
+- ✓ Relatórios financeiros automáticos
+- ✓ Portal de suporte para clientes
+- ✓ Avaliações 360° da equipe
+- ✓ Integração com Google Meet e IA
+
+**CTA:**
+> "Quer ver como funciona? Agende uma demonstração."
+
+---
+
+### Opção 2: Integrar na Seção "Por que escolher a ImpulsoTech?"
+
+Adicionar uma linha na tabela comparativa:
+
+| Critério | ImpulsoTech | Outras Agências |
+|----------|-------------|-----------------|
+| Ferramenta própria de gestão | ✓ Sistema Impulso | ✕ Dependem de terceiros |
+
+E um texto complementar:
+
+> "Enquanto outras agências dependem de ferramentas genéricas, nós construímos nossa própria plataforma de gestão. O Sistema Impulso integra time tracking, chat, suporte ao cliente e relatórios — tudo em um só lugar. Se conseguimos construir isso para nós, imagine o que podemos construir para você."
+
+---
+
+### Opção 3: Destaque no Hero (sutil)
+
+Adicionar um badge ou linha abaixo do subtítulo principal:
+
+> 🚀 **Powered by Sistema Impulso** — nossa plataforma proprietária de gestão de projetos
+
+---
+
+### Opção 4: Case de Sucesso Interno
+
+Criar um card na seção "Casos de Sucesso":
+
+**Sistema Impulso**
+> Plataforma interna de gestão de projetos
+
+**Descrição curta:**
+> "Desenvolvemos nossa própria ferramenta de gestão com time tracking, chat em tempo real, suporte ao cliente e relatórios automáticos. +66.000 linhas de código, 47 módulos integrados, usado em todos os nossos projetos."
+
+**Métricas:**
+- 100% dos projetos gerenciados internamente
+- Redução de 40% no tempo de comunicação com cliente
+- Zero dependência de ferramentas pagas de terceiros
+
+---
+
+## 🎨 Sugestões Visuais
+
+### Screenshot/Mockup
+Incluir uma imagem do Sistema Impulso (dashboard ou kanban) com blur estratégico para não revelar dados sensíveis, mas mostrar a interface profissional.
+
+### Ícone/Badge
+Criar um selo "Powered by Sistema Impulso" para usar no site e em propostas comerciais.
+
+### Animação (se quiser algo chamativo)
+Um GIF ou vídeo curto (10-15s) mostrando:
+1. Dashboard → 
+2. Kanban de tasks → 
+3. Chat em tempo real → 
+4. Relatório sendo gerado
+
+---
+
+## 💬 Frases de Impacto para Usar
+
+**Para headline:**
+> "A agência que construiu sua própria ferramenta de gestão"
+
+**Para prova de capacidade:**
+> "Se conseguimos desenvolver uma plataforma com 278 endpoints e 47 módulos para uso interno, imagine o que fazemos para clientes."
+
+**Para diferenciação:**
+> "Não usamos Monday, Jira ou Notion. Usamos o que construímos."
+
+**Para transparência:**
+> "Você acompanha seu projeto em tempo real pelo nosso portal — o mesmo sistema que usamos internamente."
+
+**Para proposta comercial:**
+> "Seu projeto será gerenciado pelo Sistema Impulso, nossa plataforma proprietária que garante transparência total e entregas no prazo."
+
+---
+
+## 🔥 Funcionalidades para Destacar (por público)
+
+### Para Clientes Corporativos (B2B)
+- Multi-tenancy (separação de dados por empresa)
+- Relatórios financeiros detalhados
+- SLA configurável para suporte
+- Auditoria de ações (compliance)
+- Integração com Google Workspace
+
+### Para Startups/PMEs
+- Portal de acompanhamento do projeto
+- Chat direto com a equipe
+- Time tracking transparente (você vê as horas)
+- Notificações push em tempo real
+
+### Para Técnicos (CTOs, Tech Leads)
+- 278 endpoints RESTful
+- WebSocket para real-time
+- PostgreSQL com Drizzle ORM
+- Arquitetura multi-tenant
+- PWA com service workers
+- Integração com Claude AI
+
+---
+
+## ⚠️ Cuidados na Comunicação
+
+### Evitar:
+- Parecer que vendem o Sistema Impulso como produto (a menos que seja a intenção)
+- Listar specs técnicas demais para público não-técnico
+- Dar a entender que o sistema é "experimental" ou "em desenvolvimento"
+
+### Garantir:
+- Mostrar que é ferramenta de uso real, não protótipo
+- Conectar as features com benefícios para o cliente
+- Deixar claro que o cliente tem acesso ao portal de acompanhamento
+
+---
+
+## 📋 Checklist de Implementação
+
+- [ ] Decidir onde posicionar (seção nova vs. integração em existente)
+- [ ] Criar mockup/screenshot do Sistema Impulso para o site
+- [ ] Escrever copy final baseada nas sugestões
+- [ ] Considerar criar página dedicada (/sistema-impulso) para SEO
+- [ ] Adicionar menção ao Sistema Impulso nas propostas comerciais
+- [ ] Criar badge/selo "Powered by Sistema Impulso"
+
+---
+
+## 🎯 Posicionamento Sugerido (Resumo)
+
+**Narrativa:**
+> "Somos a agência que pratica o que vende. Enquanto outros usam Jira e Monday, nós construímos nossa própria plataforma de gestão com +66.000 linhas de código. Se conseguimos fazer isso para nós, imagine o que entregamos para você."
+
+**Benefício principal para o cliente:**
+> Transparência total — você acompanha seu projeto em tempo real no mesmo sistema que usamos internamente.
+
+---
+
+## 💡 Ideia Bônus: Oferecer Acesso ao Cliente
+
+Um diferencial adicional seria oferecer acesso ao Sistema Impulso para clientes acompanharem seus projetos:
+
+**Copy:**
+> "Clientes ImpulsoTech têm acesso exclusivo ao nosso portal de projetos. Acompanhe tarefas, converse com a equipe e veja relatórios em tempo real — sem precisar pedir atualização por email."
+
+Isso transforma uma ferramenta interna em **vantagem competitiva tangível**.
