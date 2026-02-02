@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <rect x="5" y="10" width="35" height="30" rx="5" fill="#00BCD4"/>
+  <path d="M12 32l6-14 6 14M15 27h6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M30 18v14l5-7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="50" y="33" font-family="Inter, sans-serif" font-size="20" font-weight="600" fill="#FFFFFF">Wappler</text>
+</svg>

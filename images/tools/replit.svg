@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <path d="M10 8h12a8 8 0 0 1 8 8v8H18a8 8 0 0 1-8-8V8z" fill="#F26207"/>
+  <path d="M18 24h12v4H18a8 8 0 0 0 0 16h12v-4H18a4 4 0 0 1 0-8h12V24z" fill="#FFFFFF"/>
+  <path d="M30 24v18a8 8 0 0 1-8 8H10V34h12a8 8 0 0 0 8-10z" fill="#F26207"/>
+  <text x="45" y="35" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#FFFFFF">Replit</text>
+</svg>
