@@ -226,6 +226,41 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 0.5;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(34, 211, 238, 0.15));
+    }
+    50% {
+        opacity: 1;
+        background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(139, 92, 246, 0.2));
+    }
+}
+
+@keyframes rotate-gradient {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes neon-border {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px rgba(139, 92, 246, 0.5),
+            0 0 40px rgba(34, 211, 238, 0.3),
+            inset 0 0 30px rgba(139, 92, 246, 0.1);
+    }
+    50% {
+        box-shadow: 
+            0 0 30px rgba(34, 211, 238, 0.5),
+            0 0 60px rgba(139, 92, 246, 0.3),
+            inset 0 0 40px rgba(34, 211, 238, 0.1);
+    }
+}
+
 .methodology {
     padding: 100px 0;
 }
@@ -266,12 +301,57 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 32px 24px;
-    transition: transform 0.3s, border-color 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.method-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(34, 211, 238, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.method-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(139, 92, 246, 0.3), rgba(34, 211, 238, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: rotate-gradient 3s linear infinite;
+    z-index: -1;
 }
 
 .method-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-purple);
+    transform: translateY(-8px) scale(1.02);
+    border-color: transparent;
+    background: rgba(22, 22, 29, 0.7);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 0 20px rgba(139, 92, 246, 0.4),
+        0 0 40px rgba(34, 211, 238, 0.2),
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 60px rgba(139, 92, 246, 0.1);
+}
+
+.method-card:hover::before {
+    opacity: 1;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.method-card:hover::after {
+    opacity: 1;
 }
 
 .card-icon {
@@ -422,12 +502,35 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 32px;
-    transition: transform 0.3s, border-color 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(34, 211, 238, 0.08));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-purple);
+    transform: translateY(-10px) scale(1.02);
+    border-color: transparent;
+    background: rgba(22, 22, 29, 0.6);
+    backdrop-filter: blur(20px);
+    animation: neon-border 2s ease-in-out infinite;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+    animation: pulse-glow 2s ease-in-out infinite;
 }
 
 .service-icon {
@@ -631,12 +734,43 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 16px;
     padding: 24px;
     text-align: center;
-    transition: transform 0.3s, border-color 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15), rgba(34, 211, 238, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
 }
 
 .team-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-purple);
+    transform: translateY(-10px) scale(1.05);
+    border-color: transparent;
+    background: rgba(22, 22, 29, 0.6);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 0 25px rgba(139, 92, 246, 0.5),
+        0 0 50px rgba(34, 211, 238, 0.3),
+        0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.team-card:hover::before {
+    opacity: 1;
+    animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+.team-card:hover .member-image {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(34, 211, 238, 0.4);
+    transform: scale(1.1);
 }
 
 .member-image {
@@ -646,6 +780,9 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     margin: 0 auto 20px;
     background: var(--bg-secondary);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
 }
 
 .member-image img {
