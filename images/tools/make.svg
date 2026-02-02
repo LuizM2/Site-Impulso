@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
-  <circle cx="25" cy="25" r="20" fill="#6D29D9"/>
-  <path d="M17 18h3l5 9 5-9h3v14h-3v-9l-5 9-5-9v9h-3V18z" fill="#FFFFFF"/>
-  <text x="55" y="33" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#FFFFFF">Make</text>
-</svg>
