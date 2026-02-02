@@ -925,12 +925,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-astronaut {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 150px;
-    opacity: 0.8;
+    width: 80px;
+    flex-shrink: 0;
 }
 
 .footer-astronaut img {
