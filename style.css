@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .impulso-studio-logo {
-    height: 22px;
+    height: 16px;
     width: auto;
     vertical-align: middle;
     transition: transform 0.3s ease;
@@ -213,7 +213,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .impulso-studio-logo-table {
-    height: 18px;
+    height: 14px;
     width: auto;
     vertical-align: middle;
     transition: transform 0.3s ease;
