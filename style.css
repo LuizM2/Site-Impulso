@@ -196,10 +196,31 @@ h1, h2, h3, h4, h5, h6 {
 .powered-badge a {
     color: inherit;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
 }
 
-.powered-badge a:hover strong {
-    color: var(--accent-cyan);
+.impulso-studio-logo {
+    height: 22px;
+    width: auto;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.powered-badge a:hover .impulso-studio-logo {
+    transform: scale(1.05);
+}
+
+.impulso-studio-logo-table {
+    height: 18px;
+    width: auto;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.check a:hover .impulso-studio-logo-table {
+    transform: scale(1.05);
 }
 
 .check a {
