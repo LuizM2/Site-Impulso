@@ -5,6 +5,8 @@ Este projeto é um clone do site ImpulsoTech originalmente criado no Figma. O si
 
 ## Project Structure
 - `index.html` - Página principal com todo o conteúdo HTML
+- `politica_privacidade.html` - Página de Política de Privacidade (LGPD/Google compliant)
+- `termos_de_uso.html` - Página de Termos de Uso
 - `style.css` - Estilos CSS com design responsivo
 - `script.js` - JavaScript para interatividade (menu mobile, scroll suave, formulário)
 - `attached_assets/` - Assets e informações do Figma original
@@ -31,6 +33,13 @@ Este projeto é um clone do site ImpulsoTech originalmente criado no Figma. O si
 O projeto roda com um servidor Python HTTP simples na porta 5000.
 
 ## Recent Changes
+- 03/02/2026: Páginas institucionais criadas
+  - Política de Privacidade (politica_privacidade.html) - Compatível com LGPD e requisitos Google
+  - Termos de Uso (termos_de_uso.html) - Termos completos de uso do site
+  - Links adicionados no footer do site principal
+- 03/02/2026: Easter eggs para desenvolvedores
+  - Console logs com ASCII art, mensagens divertidas e informações de contratação
+  - Comentários humorísticos espalhados pelo código (JS e CSS)
 - 02/02/2026: Renomeação de "Sistema Impulso" para "Impulso Studio"
   - Links clicáveis para https://studio.impulsotech.dev
   - Nova logo "Impulso Tech" aplicada
