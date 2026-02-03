@@ -1406,13 +1406,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-legal-links a {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-legal-links a:hover {
-    color: var(--accent-cyan);
+    color: var(--accent-purple);
 }
 
 .footer-legal-links span {
