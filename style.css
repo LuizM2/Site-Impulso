@@ -1406,7 +1406,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-legal-links a {
-    color: var(--text-primary);
+    color: #FFFFFF !important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
