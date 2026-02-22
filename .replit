@@ -8,7 +8,7 @@ packages = ["static-web-server"]
 [deployment]
 publicDir = "public"
 deploymentTarget = "static"
-build = ["bash", "-c", "rm -rf public && mkdir -p public && cp -r index.html politica_privacidade.html termos_de_uso.html style.css script.js favicon.png images/ public/"]
+build = ["rm -rf public && mkdir -p public && cp -r index.html politica_privacidade.html termos_de_uso.html style.css script.js favicon.png images/ public/"]
 
 [workflows]
 runButton = "Project"
@@ -29,14 +29,5 @@ author = "agent"
 [workflows.workflow.metadata]
 outputType = "webview"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "python3 -m http.server 5000 --bind 0.0.0.0"
-waitForPort = 5000
-
 [agent]
 expertMode = true
-
-[[ports]]
-localPort = 5000
-externalPort = 80
