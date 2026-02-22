@@ -1,13 +1,14 @@
 entrypoint = "index.html"
-modules = ["web", "python-3.11"]
+modules = ["python-3.11"]
 
 [nix]
 channel = "stable-24_11"
 packages = ["static-web-server"]
 
 [deployment]
-publicDir = "."
+publicDir = "public"
 deploymentTarget = "static"
+build = ["bash", "-c", "rm -rf public && mkdir -p public && cp -r index.html politica_privacidade.html termos_de_uso.html style.css script.js favicon.png images/ public/"]
 
 [workflows]
 runButton = "Project"
@@ -25,21 +26,17 @@ args = "ImpulsoTech Website"
 name = "ImpulsoTech Website"
 author = "agent"
 
+[workflows.workflow.metadata]
+outputType = "webview"
+
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "python3 -m http.server 5000 --bind 0.0.0.0"
 waitForPort = 5000
 
-[workflows.workflow.metadata]
-outputType = "webview"
-
-[[ports]]
-localPort = 80
-externalPort = 80
+[agent]
+expertMode = true
 
 [[ports]]
 localPort = 5000
 externalPort = 80
-
-[agent]
-expertMode = true
