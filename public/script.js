@@ -337,6 +337,8 @@ const NON_TRANSLATABLE_TERMS = new Set([
     "Emply",
     "Afon",
     "Sysbot",
+    "FIPS",
+    "Nooklead",
     "Luiz Melo",
     "Álvaro Medeiros",
     "Kevin Arend",
@@ -514,6 +516,8 @@ function localizeAttributes(locale) {
     });
 }
 
+const _i18nTextNodeOriginals = new WeakMap();
+
 function localizeTextNodes(locale) {
     if (locale === "pt-BR") {
         restoreOriginalTexts();
@@ -531,11 +535,11 @@ function localizeTextNodes(locale) {
         const trimmed = raw.trim();
         if (!trimmed) continue;
 
-        if (!node.parentElement.dataset.i18nOriginalText) {
-            node.parentElement.dataset.i18nOriginalText = trimmed;
+        if (!_i18nTextNodeOriginals.has(node)) {
+            _i18nTextNodeOriginals.set(node, trimmed);
         }
 
-        const source = node.parentElement.dataset.i18nOriginalText;
+        const source = _i18nTextNodeOriginals.get(node);
         const translated = translateStaticText(source, locale);
         const leading = raw.match(/^\s*/)?.[0] || "";
         const trailing = raw.match(/\s*$/)?.[0] || "";
@@ -546,17 +550,16 @@ function localizeTextNodes(locale) {
 }
 
 function restoreOriginalTexts() {
-    document.querySelectorAll("[data-i18n-original-text]").forEach((el) => {
-        const original = el.dataset.i18nOriginalText;
-        if (!original) return;
-        const textNode = Array.from(el.childNodes).find((node) => node.nodeType === Node.TEXT_NODE && (node.textContent || "").trim().length > 0);
-        if (textNode) {
-            const raw = textNode.textContent || "";
-            const leading = raw.match(/^\s*/)[0];
-            const trailing = raw.match(/\s*$/)[0];
-            textNode.textContent = `${leading}${original}${trailing}`;
-        }
-    });
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+        if (!_i18nTextNodeOriginals.has(node)) continue;
+        const original = _i18nTextNodeOriginals.get(node);
+        const raw = node.textContent || "";
+        const leading = raw.match(/^\s*/)[0];
+        const trailing = raw.match(/\s*$/)[0];
+        node.textContent = `${leading}${original}${trailing}`;
+    }
 
     const attrs = ["placeholder", "aria-label", "title", "alt", "value", "data-title"];
     const getAttrDatasetKey = (attr) => `i18nOriginalAttr${attr.replace(/[^a-zA-Z0-9]/g, "_")}`;

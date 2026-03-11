@@ -337,6 +337,8 @@ const NON_TRANSLATABLE_TERMS = new Set([
     "Emply",
     "Afon",
     "Sysbot",
+    "FIPS",
+    "Nooklead",
     "Luiz Melo",
     "Álvaro Medeiros",
     "Kevin Arend",
