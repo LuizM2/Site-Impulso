@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Mockup automacao processos">
+  <defs><linearGradient id="gb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="#050608"/>
+  <rect x="70" y="70" width="1060" height="660" rx="20" fill="#0c0d11" stroke="rgba(255,255,255,0.06)"/>
+  <rect x="100" y="100" width="750" height="600" rx="14" fill="#111318" stroke="rgba(255,255,255,0.06)"/>
+  <rect x="880" y="100" width="220" height="290" rx="14" fill="#111318"/>
+  <rect x="880" y="410" width="220" height="290" rx="14" fill="#111318"/>
+  <circle cx="210" cy="220" r="22" fill="#7c3aed"/>
+  <circle cx="390" cy="320" r="22" fill="#06b6d4"/>
+  <circle cx="570" cy="260" r="22" fill="#7c3aed"/>
+  <circle cx="710" cy="390" r="22" fill="#06b6d4"/>
+  <path d="M232 220 L368 320 L548 260 L688 390" stroke="url(#gb)" stroke-width="4" fill="none"/>
+  <rect x="160" y="470" width="610" height="16" rx="6" fill="#1c212f"/>
+  <rect x="160" y="500" width="560" height="16" rx="6" fill="#1c212f"/>
+  <rect x="160" y="530" width="530" height="16" rx="6" fill="#1c212f"/>
+  <rect x="912" y="140" width="156" height="28" rx="10" fill="url(#gb)" opacity="0.72"/>
+</svg>
