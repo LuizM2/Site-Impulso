@@ -1,0 +1,183 @@
+.srv-page {
+    padding-top: 96px;
+}
+
+.srv-page section {
+    padding: 84px 0;
+}
+
+.srv-hero {
+    padding-top: 112px;
+}
+
+.srv-kicker {
+    display: inline-flex;
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+}
+
+.srv-hero h1 {
+    font-size: 52px;
+    line-height: 1.05;
+    margin-bottom: 12px;
+    max-width: 18ch;
+}
+
+.srv-hero p {
+    color: var(--text-secondary);
+    max-width: 70ch;
+}
+
+.srv-actions {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.srv-btn-secondary {
+    display: inline-flex;
+    text-decoration: none;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 14px 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.srv-btn-secondary:hover {
+    border-color: var(--accent-purple);
+}
+
+.srv-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.srv-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.srv-card h3 {
+    margin-bottom: 10px;
+}
+
+.srv-card p {
+    color: var(--text-secondary);
+}
+
+.srv-checklist {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+}
+
+.srv-checklist li {
+    position: relative;
+    padding-left: 16px;
+    color: var(--text-secondary);
+}
+
+.srv-checklist li::before {
+    content: '✓';
+    color: var(--accent-cyan);
+    position: absolute;
+    left: 0;
+}
+
+.srv-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.srv-stack span {
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 6px 12px;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.srv-process {
+    display: grid;
+    gap: 12px;
+}
+
+.srv-process li {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px;
+    color: var(--text-secondary);
+    list-style: none;
+}
+
+.srv-process strong {
+    color: var(--accent-cyan);
+}
+
+.srv-cta {
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.srv-cta h2 {
+    font-size: 40px;
+    max-width: 20ch;
+    margin: 0 auto 14px;
+}
+
+.srv-cta p {
+    color: var(--text-secondary);
+    max-width: 68ch;
+    margin: 0 auto;
+}
+
+.srv-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.srv-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+    .srv-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .srv-hero h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .srv-page section {
+        padding: 70px 0;
+    }
+
+    .srv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .srv-hero h1 {
+        font-size: 34px;
+    }
+
+    .srv-cta h2 {
+        font-size: 30px;
+    }
+}
