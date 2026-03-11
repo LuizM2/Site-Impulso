@@ -309,12 +309,34 @@ const COMMON_TEXT_TRANSLATIONS = {
 
 let currentLocale = "pt-BR";
 const STATIC_TRANSLATIONS = window.I18N_STATIC_TRANSLATIONS || {};
+const NORMALIZED_STATIC_TRANSLATIONS = {};
 const NON_TRANSLATABLE_TERMS = new Set([
     "Bubble",
+    "Bubble.io",
     "Wappler",
     "Lovable",
+    "Cursor",
+    "Claude Code",
+    "Ubuntu",
+    "OpenAI",
+    "Supabase",
+    "Docker",
+    "n8n",
+    "Ollama",
+    "GitHub",
+    "Oracle",
+    "Cloudflare",
+    "PostgreSQL",
+    "MySQL",
+    "Neon SQL",
+    "NeonSQL",
+    "Replit",
     "ImpulsoTech",
     "Impulso Core",
+    "Melhor Pix",
+    "Emply",
+    "Afon",
+    "Sysbot",
     "Luiz Melo",
     "Álvaro Medeiros",
     "Kevin Arend",
@@ -353,6 +375,22 @@ const PROTECTED_TERMS = [
     {
         canonical: "LangChain / RAG",
         variants: ["LangChain / RAG", "浪链/RAG", "ラングチェーン/RAG", "Chaîne linguistique / RAG"]
+    },
+    {
+        canonical: "Melhor Pix",
+        variants: ["Melhor Pix", "Meilleure photo", "更好的像素", "ベストピックス"]
+    },
+    {
+        canonical: "Emply",
+        variants: ["Emply"]
+    },
+    {
+        canonical: "Afon",
+        variants: ["Afon"]
+    },
+    {
+        canonical: "Sysbot",
+        variants: ["Sysbot", "Bot système", "系统机器人", "シスボット"]
     }
 ];
 
@@ -401,10 +439,62 @@ function enforceProtectedTerms(text) {
     return output;
 }
 
+function normalizeI18nText(text) {
+    return (text || "").replace(/\s+/g, " ").trim();
+}
+
+function getStaticTranslation(locale, text) {
+    const localeTable = STATIC_TRANSLATIONS[locale];
+    if (!localeTable) return null;
+
+    const direct = localeTable[text];
+    if (direct) return direct;
+
+    if (!NORMALIZED_STATIC_TRANSLATIONS[locale]) {
+        const normalizedMap = new Map();
+        Object.entries(localeTable).forEach(([sourceText, translatedText]) => {
+            const normalizedSource = normalizeI18nText(sourceText);
+            if (normalizedSource && !normalizedMap.has(normalizedSource)) {
+                normalizedMap.set(normalizedSource, translatedText);
+            }
+        });
+        NORMALIZED_STATIC_TRANSLATIONS[locale] = normalizedMap;
+    }
+
+    const normalizedInput = normalizeI18nText(text);
+    return NORMALIZED_STATIC_TRANSLATIONS[locale].get(normalizedInput) || null;
+}
+
+function enforceProtectedTermsInDom() {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+        const original = node.textContent || "";
+        const normalized = enforceProtectedTerms(original);
+        if (normalized !== original) {
+            node.textContent = normalized;
+        }
+    }
+
+    ["placeholder", "aria-label", "title", "alt", "value", "data-title"].forEach((attr) => {
+        document.querySelectorAll(`[${attr}]`).forEach((el) => {
+            const original = el.getAttribute(attr) || "";
+            const normalized = enforceProtectedTerms(original);
+            if (normalized !== original) {
+                el.setAttribute(attr, normalized);
+            }
+        });
+    });
+}
+
 function translateStaticText(text, locale) {
     if (!text || locale === "pt-BR") return text;
     if (NON_TRANSLATABLE_TERMS.has(text)) return text;
-    const translated = STATIC_TRANSLATIONS[locale]?.[text] || COMMON_TEXT_TRANSLATIONS[locale]?.[text] || text;
+    const translated =
+        getStaticTranslation(locale, text) ||
+        COMMON_TEXT_TRANSLATIONS[locale]?.[text] ||
+        COMMON_TEXT_TRANSLATIONS[locale]?.[normalizeI18nText(text)] ||
+        text;
     return enforceProtectedTerms(translated);
 }
 
@@ -484,6 +574,7 @@ function restoreOriginalTexts() {
 function createLanguageSelector() {
     const headerContent = document.querySelector(".header-content");
     if (!headerContent || headerContent.querySelector(".lang-switcher")) return;
+    const nav = headerContent.querySelector(".nav");
 
     const wrapper = document.createElement("div");
     wrapper.className = "lang-switcher";
@@ -513,7 +604,11 @@ function createLanguageSelector() {
 
     wrapper.appendChild(label);
     wrapper.appendChild(select);
-    headerContent.appendChild(wrapper);
+    if (nav) {
+        headerContent.insertBefore(wrapper, nav);
+    } else {
+        headerContent.appendChild(wrapper);
+    }
 }
 
 function refreshLanguageSelectorLabel() {
@@ -533,6 +628,7 @@ function setLocale(locale, shouldPersist) {
     restoreOriginalTexts();
     localizeTitle(locale);
     localizeTextNodes(locale);
+    enforceProtectedTermsInDom();
     refreshLanguageSelectorLabel();
     if (shouldPersist) {
         localStorage.setItem(LOCALE_STORAGE_KEY, locale);
@@ -542,9 +638,170 @@ function setLocale(locale, shouldPersist) {
     }));
 }
 
+function initTechGridMagnetEffect() {
+    const techGrid = document.querySelector(".tech-grid");
+    if (!techGrid) return;
+
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+    }
+
+    const techCards = Array.from(techGrid.querySelectorAll(".tech-card"));
+    if (!techCards.length) return;
+
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+    const getRadius = () => (window.innerWidth <= 768 ? 170 : 220);
+
+    const state = {
+        pointerX: 0,
+        pointerY: 0,
+        active: false,
+        radius: getRadius(),
+        rafId: null,
+        cards: techCards.map((card) => ({
+            card,
+            cx: 0,
+            cy: 0,
+            current: 0,
+            target: 0,
+            glowRgb: "34 211 238"
+        }))
+    };
+
+    function parseGlowColor(card) {
+        const badge = card.querySelector(".tech-badge");
+        const inlineStyle = badge ? (badge.getAttribute("style") || "") : "";
+        const matches = inlineStyle.match(/#[0-9a-fA-F]{3,8}/g);
+        if (matches && matches.length) {
+            return matches[matches.length - 1];
+        }
+        return "#22D3EE";
+    }
+
+    function hexToRgbString(hex) {
+        if (!hex) return "34 211 238";
+        const normalized = hex.replace("#", "").trim();
+        const isShort = normalized.length === 3;
+        const isLong = normalized.length >= 6;
+        if (!isShort && !isLong) return "34 211 238";
+
+        const r = parseInt(isShort ? normalized[0] + normalized[0] : normalized.slice(0, 2), 16);
+        const g = parseInt(isShort ? normalized[1] + normalized[1] : normalized.slice(2, 4), 16);
+        const b = parseInt(isShort ? normalized[2] + normalized[2] : normalized.slice(4, 6), 16);
+
+        if ([r, g, b].some((value) => Number.isNaN(value))) {
+            return "34 211 238";
+        }
+
+        return `${r} ${g} ${b}`;
+    }
+
+    state.cards.forEach((entry) => {
+        const glowHex = parseGlowColor(entry.card);
+        entry.glowRgb = hexToRgbString(glowHex);
+        entry.card.style.setProperty("--glow-rgb", entry.glowRgb);
+        entry.card.style.setProperty("--proximity", "0");
+        entry.card.style.setProperty("--scale", "1");
+        entry.card.style.setProperty("--lift", "0px");
+        entry.card.style.setProperty("--logo-brightness", "1");
+        entry.card.style.setProperty("--halo-alpha", "0");
+    });
+
+    function recalcCardCenters() {
+        state.radius = getRadius();
+        state.cards.forEach((entry) => {
+            const rect = entry.card.getBoundingClientRect();
+            entry.cx = rect.left + rect.width / 2;
+            entry.cy = rect.top + rect.height / 2;
+        });
+    }
+
+    function applyVisual(entry) {
+        const influence = clamp(entry.current, 0, 1);
+        const scale = 1 + influence * 0.12;
+        const lift = influence * 8;
+        const brightness = 1 + influence * 0.35;
+        const halo = influence * 0.7;
+
+        entry.card.style.setProperty("--proximity", influence.toFixed(4));
+        entry.card.style.setProperty("--scale", scale.toFixed(4));
+        entry.card.style.setProperty("--lift", `${lift.toFixed(3)}px`);
+        entry.card.style.setProperty("--logo-brightness", brightness.toFixed(4));
+        entry.card.style.setProperty("--halo-alpha", halo.toFixed(4));
+    }
+
+    function ensureAnimationLoop() {
+        if (state.rafId !== null) return;
+        state.rafId = requestAnimationFrame(tick);
+    }
+
+    function tick() {
+        let shouldContinue = state.active;
+
+        state.cards.forEach((entry) => {
+            if (state.active) {
+                const dx = state.pointerX - entry.cx;
+                const dy = state.pointerY - entry.cy;
+                const distance = Math.hypot(dx, dy);
+                entry.target = clamp(1 - distance / state.radius, 0, 1);
+            } else {
+                entry.target = 0;
+            }
+
+            const delta = entry.target - entry.current;
+            entry.current += delta * 0.18;
+            if (Math.abs(delta) > 0.0015) {
+                shouldContinue = true;
+            }
+
+            applyVisual(entry);
+        });
+
+        if (shouldContinue) {
+            state.rafId = requestAnimationFrame(tick);
+        } else {
+            state.rafId = null;
+        }
+    }
+
+    recalcCardCenters();
+
+    techGrid.addEventListener("pointerenter", (event) => {
+        recalcCardCenters();
+        state.active = true;
+        state.pointerX = event.clientX;
+        state.pointerY = event.clientY;
+        ensureAnimationLoop();
+    });
+
+    techGrid.addEventListener("pointermove", (event) => {
+        state.active = true;
+        state.pointerX = event.clientX;
+        state.pointerY = event.clientY;
+        ensureAnimationLoop();
+    }, { passive: true });
+
+    techGrid.addEventListener("pointerleave", () => {
+        state.active = false;
+        ensureAnimationLoop();
+    });
+
+    window.addEventListener("resize", () => {
+        recalcCardCenters();
+        ensureAnimationLoop();
+    }, { passive: true });
+
+    window.addEventListener("scroll", () => {
+        if (!state.active) return;
+        recalcCardCenters();
+        ensureAnimationLoop();
+    }, { passive: true });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     currentLocale = getInitialLocale();
     createLanguageSelector();
+    initTechGridMagnetEffect();
 
     const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
     const nav = document.querySelector(".nav");
