@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Mockup paineis relatorios">
+  <defs><linearGradient id="gc" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="#050608"/>
+  <rect x="80" y="80" width="1040" height="640" rx="20" fill="#0c0d11" stroke="rgba(255,255,255,0.06)"/>
+  <rect x="110" y="110" width="1010" height="88" rx="14" fill="#111318"/>
+  <rect x="110" y="220" width="320" height="220" rx="14" fill="#111318"/>
+  <rect x="450" y="220" width="320" height="220" rx="14" fill="#111318"/>
+  <rect x="790" y="220" width="300" height="220" rx="14" fill="#111318"/>
+  <rect x="110" y="460" width="980" height="230" rx="14" fill="#111318"/>
+  <rect x="140" y="255" width="260" height="150" rx="12" fill="url(#gc)" opacity="0.18"/>
+  <rect x="480" y="255" width="260" height="150" rx="12" fill="#1a1f2a"/>
+  <rect x="820" y="255" width="240" height="150" rx="12" fill="#1a1f2a"/>
+  <rect x="140" y="500" width="930" height="14" rx="5" fill="#1c212f"/>
+  <rect x="140" y="530" width="870" height="14" rx="5" fill="#1c212f"/>
+  <rect x="140" y="560" width="820" height="14" rx="5" fill="#1c212f"/>
+</svg>

@@ -34,6 +34,21 @@
     max-width: 70ch;
 }
 
+.srv-hero-media {
+    margin-bottom: 18px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0f1117;
+}
+
+.srv-hero-media img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 8.8;
+    object-fit: cover;
+}
+
 .srv-actions {
     margin-top: 26px;
     display: flex;
@@ -175,6 +190,10 @@
 
     .srv-hero h1 {
         font-size: 34px;
+    }
+
+    .srv-hero-media img {
+        aspect-ratio: 16 / 9;
     }
 
     .srv-cta h2 {
