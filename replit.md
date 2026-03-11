@@ -5,6 +5,14 @@ Este projeto é um clone do site ImpulsoTech originalmente criado no Figma. O si
 
 ## Project Structure
 - `index.html` - Página principal com todo o conteúdo HTML
+- `servicos.html` - Página de portfólio de serviços
+- `ia.html` - Página dedicada ao Impulso Core (soluções de IA)
+- `servico-apps.html` - Página de detalhes: Desenvolvimento de Apps
+- `servico-automacoes.html` - Página de detalhes: Automações
+- `servico-consultoria.html` - Página de detalhes: Consultoria
+- `servico-integracoes.html` - Página de detalhes: Integrações
+- `servico-paineis.html` - Página de detalhes: Painéis
+- `servico-self-hosted.html` - Página de detalhes: Self-Hosted
 - `politica_privacidade.html` - Página de Política de Privacidade (LGPD/Google compliant)
 - `termos_de_uso.html` - Página de Termos de Uso
 - `style.css` - Estilos CSS com design responsivo
@@ -30,7 +38,12 @@ Este projeto é um clone do site ImpulsoTech originalmente criado no Figma. O si
 - Animações de entrada nos cards
 
 ## Running the Project
-O projeto roda com um servidor Python HTTP simples na porta 5000.
+O projeto roda com `static-web-server` na porta 5000.
+
+## Deployment
+- Tipo: Static site
+- Build: copia todos os *.html, *.css, *.js, *.png e images/ para public/
+- Diretório público: public/
 
 ## Recent Changes
 - 03/02/2026: Páginas institucionais criadas
