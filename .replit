@@ -8,7 +8,7 @@ packages = ["static-web-server"]
 [deployment]
 publicDir = "public"
 deploymentTarget = "static"
-build = ["bash", "-c", "rm -rf public && mkdir -p public && cp -r *.html *.css *.js *.png images/ public/ 2>/dev/null; true"]
+build = ["python3", "scripts/build_public.py"]
 
 [workflows]
 runButton = "Project"

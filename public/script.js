@@ -25,6 +25,18 @@ console.log("%c─────────────────────�
 
 const SUPPORTED_LOCALES = ["pt-BR", "en", "fr", "ja", "zh-CN"];
 const LOCALE_STORAGE_KEY = "impulsotech_locale";
+const LOCALE_PATH_SEGMENTS = {
+    "pt-BR": "pt-br",
+    en: "en",
+    fr: "fr",
+    ja: "ja",
+    "zh-CN": "zh-cn"
+};
+const PATH_SEGMENT_TO_LOCALE = Object.entries(LOCALE_PATH_SEGMENTS).reduce((acc, [locale, segment]) => {
+    acc[segment] = locale;
+    return acc;
+}, {});
+const SEO_BASE_URL = "https://impulsotech.dev";
 const LOCALE_LABELS = {
     "pt-BR": "Português",
     en: "English",
@@ -429,9 +441,130 @@ function mapNavigatorLocale() {
 }
 
 function getInitialLocale() {
+    const localeFromPath = getLocaleFromPathname(window.location.pathname);
+    if (localeFromPath) return localeFromPath;
     const stored = localStorage.getItem(LOCALE_STORAGE_KEY);
     if (stored && SUPPORTED_LOCALES.includes(stored)) return stored;
     return mapNavigatorLocale();
+}
+
+function getLocaleFromPathname(pathname) {
+    const [firstSegment] = pathname.replace(/^\/+/, "").split("/");
+    if (!firstSegment) return null;
+    const normalized = firstSegment.toLowerCase();
+    return PATH_SEGMENT_TO_LOCALE[normalized] || null;
+}
+
+function getPathWithoutLocale(pathname) {
+    const cleanPath = pathname || "/";
+    const parts = cleanPath.replace(/^\/+/, "").split("/");
+    if (!parts[0]) return "/";
+    const maybeLocale = parts[0].toLowerCase();
+    if (!PATH_SEGMENT_TO_LOCALE[maybeLocale]) return cleanPath;
+    const remaining = parts.slice(1).join("/");
+    return remaining ? `/${remaining}` : "/";
+}
+
+function normalizeSitePath(pathname) {
+    if (!pathname || pathname === "/") return "/";
+    if (pathname === "/index.html") return "/";
+    return pathname;
+}
+
+function buildLocalizedPath(locale, pathname) {
+    const localeSegment = LOCALE_PATH_SEGMENTS[locale] || LOCALE_PATH_SEGMENTS["pt-BR"];
+    const normalizedPath = normalizeSitePath(getPathWithoutLocale(pathname));
+    if (normalizedPath === "/") return `/${localeSegment}/`;
+    return `/${localeSegment}${normalizedPath}`;
+}
+
+function updateCurrentUrlForLocale(locale) {
+    const targetPath = buildLocalizedPath(locale, window.location.pathname);
+    const nextUrl = `${targetPath}${window.location.search}${window.location.hash}`;
+    const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    if (nextUrl !== currentUrl) {
+        window.history.replaceState({}, "", nextUrl);
+    }
+}
+
+function buildLocalizedHref(locale, rawHref) {
+    if (!rawHref) return rawHref;
+    const trimmed = rawHref.trim();
+    if (
+        !trimmed ||
+        trimmed.startsWith("#") ||
+        trimmed.startsWith("mailto:") ||
+        trimmed.startsWith("tel:") ||
+        trimmed.startsWith("javascript:") ||
+        trimmed.startsWith("http://") ||
+        trimmed.startsWith("https://") ||
+        trimmed.startsWith("//")
+    ) {
+        return rawHref;
+    }
+
+    const hashIndex = trimmed.indexOf("#");
+    const queryIndex = trimmed.indexOf("?");
+    let splitIndex = -1;
+    if (hashIndex >= 0 && queryIndex >= 0) splitIndex = Math.min(hashIndex, queryIndex);
+    else splitIndex = Math.max(hashIndex, queryIndex);
+    const basePath = splitIndex >= 0 ? trimmed.slice(0, splitIndex) : trimmed;
+    const suffix = splitIndex >= 0 ? trimmed.slice(splitIndex) : "";
+
+    if (!basePath || basePath === ".") return rawHref;
+
+    const pathname = basePath.startsWith("/") ? basePath : `/${basePath.replace(/^\.?\//, "")}`;
+    const localizedPath = buildLocalizedPath(locale, pathname);
+    return `${localizedPath}${suffix}`;
+}
+
+function updateLocalizedLinks(locale) {
+    document.querySelectorAll("a[href]").forEach((anchor) => {
+        if (!anchor.dataset.i18nOriginalHref) {
+            anchor.dataset.i18nOriginalHref = anchor.getAttribute("href") || "";
+        }
+        const originalHref = anchor.dataset.i18nOriginalHref;
+        const localizedHref = buildLocalizedHref(locale, originalHref);
+        if (localizedHref && localizedHref !== originalHref) {
+            anchor.setAttribute("href", localizedHref);
+        } else {
+            anchor.setAttribute("href", originalHref);
+        }
+    });
+}
+
+function updateSeoLanguageLinks(locale) {
+    const normalizedPath = normalizeSitePath(getPathWithoutLocale(window.location.pathname));
+    const slugPath = normalizedPath === "/" ? "" : normalizedPath;
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.setAttribute("rel", "canonical");
+        document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", `${SEO_BASE_URL}${buildLocalizedPath(locale, normalizedPath)}`);
+
+    Object.entries(LOCALE_PATH_SEGMENTS).forEach(([localeCode, segment]) => {
+        const hreflang = localeCode.toLowerCase();
+        let altLink = document.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`);
+        if (!altLink) {
+            altLink = document.createElement("link");
+            altLink.setAttribute("rel", "alternate");
+            altLink.setAttribute("hreflang", hreflang);
+            document.head.appendChild(altLink);
+        }
+        altLink.setAttribute("href", `${SEO_BASE_URL}/${segment}${slugPath || "/"}`);
+    });
+
+    let defaultAlt = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    if (!defaultAlt) {
+        defaultAlt = document.createElement("link");
+        defaultAlt.setAttribute("rel", "alternate");
+        defaultAlt.setAttribute("hreflang", "x-default");
+        document.head.appendChild(defaultAlt);
+    }
+    defaultAlt.setAttribute("href", `${SEO_BASE_URL}/${LOCALE_PATH_SEGMENTS["pt-BR"]}${slugPath || "/"}`);
 }
 
 function localizeTitle(locale) {
@@ -675,7 +808,7 @@ function refreshLanguageSelectorLabel() {
     }
 }
 
-function setLocale(locale, shouldPersist) {
+function setLocale(locale, shouldPersist, shouldUpdateUrl = true) {
     if (!SUPPORTED_LOCALES.includes(locale)) return;
     currentLocale = locale;
     document.documentElement.lang = locale;
@@ -684,7 +817,12 @@ function setLocale(locale, shouldPersist) {
     localizeTextNodes(locale);
     enforceProtectedTermsInDom();
     updateFooterYear();
+    updateLocalizedLinks(locale);
+    updateSeoLanguageLinks(locale);
     refreshLanguageSelectorLabel();
+    if (shouldUpdateUrl) {
+        updateCurrentUrlForLocale(locale);
+    }
     if (shouldPersist) {
         localStorage.setItem(LOCALE_STORAGE_KEY, locale);
     }
@@ -971,7 +1109,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     initCaseCarousel();
-    setLocale(currentLocale, false);
+    setLocale(currentLocale, false, true);
 });
 
 function initCaseCarousel() {
