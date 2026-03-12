@@ -121,9 +121,9 @@ function initTypewriter() {
             source: 'Fonte: /docs/politica-compras.pdf'
         },
         en: {
-            question: 'Which purchases above R$50k require additional approval this month?',
+            question: 'Which purchases above USD 50k require additional approval this month?',
             answerLines: [
-                'I found 7 pending requests above R$50k.',
+                'I found 7 pending requests above USD 50k.',
                 '3 are missing required attachments and 2 exceeded the validation SLA.',
                 'I can open the list by cost center and owner now.'
             ],

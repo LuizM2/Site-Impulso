@@ -307,6 +307,21 @@ const COMMON_TEXT_TRANSLATIONS = {
     }
 };
 
+const CRITICAL_TRANSLATION_OVERRIDES = {
+    en: {
+        "Projetos que tiramos do papel — do conceito ao produto digital funcionando": "Projects we brought to life — from concept to working digital product",
+        "IA com propósito: chatbots que resolvem, automações que economizam horas, análises que geram decisões.": "AI with purpose: chatbots that solve, automations that save hours, analytics that drive decisions.",
+        "Perguntas em português viram consultas e dashboards sem abertura de ticket.": "Questions in natural language become queries and dashboards without opening a ticket."
+    }
+};
+
+const NORMALIZED_CRITICAL_TRANSLATION_OVERRIDES = {};
+const EN_POST_TRANSLATION_FIXES = {
+    "Projects that we took from paper — from concept to working digital product": "Projects we brought to life — from concept to working digital product",
+    "AI with purpose: chatbots that solve, automations that save hours, analyzes that generate decisions.": "AI with purpose: chatbots that solve, automations that save hours, analytics that drive decisions.",
+    "Questions in Portuguese become queries and dashboards without opening a ticket.": "Questions in natural language become queries and dashboards without opening a ticket."
+};
+
 let currentLocale = "pt-BR";
 const STATIC_TRANSLATIONS = window.I18N_STATIC_TRANSLATIONS || {};
 const NORMALIZED_STATIC_TRANSLATIONS = {};
@@ -467,6 +482,28 @@ function getStaticTranslation(locale, text) {
     return NORMALIZED_STATIC_TRANSLATIONS[locale].get(normalizedInput) || null;
 }
 
+function getCriticalTranslationOverride(locale, text) {
+    const localeTable = CRITICAL_TRANSLATION_OVERRIDES[locale];
+    if (!localeTable) return null;
+
+    const direct = localeTable[text];
+    if (direct) return direct;
+
+    if (!NORMALIZED_CRITICAL_TRANSLATION_OVERRIDES[locale]) {
+        const normalizedMap = new Map();
+        Object.entries(localeTable).forEach(([sourceText, translatedText]) => {
+            const normalizedSource = normalizeI18nText(sourceText);
+            if (normalizedSource && !normalizedMap.has(normalizedSource)) {
+                normalizedMap.set(normalizedSource, translatedText);
+            }
+        });
+        NORMALIZED_CRITICAL_TRANSLATION_OVERRIDES[locale] = normalizedMap;
+    }
+
+    const normalizedInput = normalizeI18nText(text);
+    return NORMALIZED_CRITICAL_TRANSLATION_OVERRIDES[locale].get(normalizedInput) || null;
+}
+
 function enforceProtectedTermsInDom() {
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     let node;
@@ -493,11 +530,26 @@ function translateStaticText(text, locale) {
     if (!text || locale === "pt-BR") return text;
     if (NON_TRANSLATABLE_TERMS.has(text)) return text;
     const translated =
+        getCriticalTranslationOverride(locale, text) ||
         getStaticTranslation(locale, text) ||
         COMMON_TEXT_TRANSLATIONS[locale]?.[text] ||
         COMMON_TEXT_TRANSLATIONS[locale]?.[normalizeI18nText(text)] ||
         text;
+
+    if (locale === "en" && EN_POST_TRANSLATION_FIXES[translated]) {
+        return enforceProtectedTerms(EN_POST_TRANSLATION_FIXES[translated]);
+    }
+
     return enforceProtectedTerms(translated);
+}
+
+function updateFooterYear() {
+    const currentYear = String(new Date().getFullYear());
+    document.querySelectorAll(".footer-company").forEach((el) => {
+        const content = (el.textContent || "").trim();
+        if (!content) return;
+        el.textContent = content.replace(/^\d{4}/, currentYear);
+    });
 }
 
 function localizeAttributes(locale) {
@@ -631,6 +683,7 @@ function setLocale(locale, shouldPersist) {
     localizeTitle(locale);
     localizeTextNodes(locale);
     enforceProtectedTermsInDom();
+    updateFooterYear();
     refreshLanguageSelectorLabel();
     if (shouldPersist) {
         localStorage.setItem(LOCALE_STORAGE_KEY, locale);
@@ -802,6 +855,7 @@ function initTechGridMagnetEffect() {
 
 document.addEventListener("DOMContentLoaded", function () {
     currentLocale = getInitialLocale();
+    updateFooterYear();
     createLanguageSelector();
     initTechGridMagnetEffect();
 
