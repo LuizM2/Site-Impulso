@@ -133,7 +133,7 @@ window.I18N_STATIC_TRANSLATIONS = {
     "🚀 Powered by": "🚀 Powered by",
     "Impulso Studio": "Impulso Studio",
     "Como transformamos sua ideia em produto digital": "How we transform your idea into a digital product",
-    "AGENDAR CONVERSA DE 15 MIN": "SCHEDULE A 15 MIN CONVERSATION",
+    "AGENDAR CONVERSA DE 15 MIN": "SCHEDULE A 15 MIN CHAT",
     "Velocidade de startup com robustez enterprise": "Startup speed with enterprise robustness",
     "— nossa plataforma proprietária de gestão": "— our proprietary management platform",
     "Wappler": "Wappler",
