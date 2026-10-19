@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://impulsotech.dev/sitemap.xml

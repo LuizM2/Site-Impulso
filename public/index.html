@@ -1,687 +1,235 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImpulsoTech - Tecnologia No-Code e Automatizações</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Impulsotech | Site, automação e painel com preço fechado</title>
+  <meta name="description" content="Site profissional, automação de processos e painel de indicadores para pequenas e médias empresas. Preço fechado, prazo no contrato e um sócio responsável pela entrega.">
+  <link rel="canonical" href="https://impulsotech.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Impulsotech">
+  <meta property="og:title" content="Impulsotech | Site, automação e painel com preço fechado">
+  <meta property="og:description" content="Site profissional, automação de processos e painel de indicadores para pequenas e médias empresas. Preço fechado, prazo no contrato e um sócio responsável pela entrega.">
+  <meta property="og:url" content="https://impulsotech.dev/">
+  <meta property="og:image" content="https://impulsotech.dev/images/og-impulsotech.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0A0A0F">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <script>document.documentElement.classList.remove('no-js')</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://impulsotech.dev/#org", "name": "Impulsotech", "legalName": "Impulsotech Desenvolvimento Ltda", "url": "https://impulsotech.dev/", "logo": "https://impulsotech.dev/images/logo-480.png", "email": "contato@impulsotech.dev", "taxID": "56.190.504/0001-76", "areaServed": "BR"}, {"@type": "WebSite", "url": "https://impulsotech.dev/", "name": "Impulsotech", "inLanguage": "pt-BR"}, {"@type": "OfferCatalog", "name": "Ofertas Impulsotech", "url": "https://impulsotech.dev/ofertas/", "itemListElement": [{"@type": "Offer", "name": "Site profissional", "url": "https://impulsotech.dev/ofertas/site/", "priceCurrency": "BRL", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 3500, "maxPrice": 6000, "priceCurrency": "BRL"}, "seller": {"@id": "https://impulsotech.dev/#org"}}, {"@type": "Offer", "name": "Automação de processo", "url": "https://impulsotech.dev/ofertas/automacao/", "priceCurrency": "BRL", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 2500, "maxPrice": 6000, "priceCurrency": "BRL"}, "seller": {"@id": "https://impulsotech.dev/#org"}}, {"@type": "Offer", "name": "Painel de indicadores", "url": "https://impulsotech.dev/ofertas/painel/", "priceCurrency": "BRL", "priceSpecification": {"@type": "PriceSpecification", "minPrice": 4000, "maxPrice": 8000, "priceCurrency": "BRL"}, "seller": {"@id": "https://impulsotech.dev/#org"}}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quanto custa?", "acceptedAnswer": {"@type": "Answer", "text": "Site profissional a partir de R$ 3.500, automação a partir de R$ 2.500 e painel a partir de R$ 4.000. O valor exato sai na proposta de uma página, antes de começar. Projetos sob medida ficam entre R$ 10 mil e R$ 40 mil."}}, {"@type": "Question", "name": "Em quanto tempo fica pronto?", "acceptedAnswer": {"@type": "Answer", "text": "Site em 10 dias úteis, automação em 1 a 2 semanas e painel em 2 semanas, contados a partir do envio do material e dos acessos."}}, {"@type": "Question", "name": "Quem faz o trabalho?", "acceptedAnswer": {"@type": "Answer", "text": "A equipe da Impulsotech, coordenada por um dos três sócios, que é quem fala com você do começo ao fim."}}, {"@type": "Question", "name": "Como funciona o pagamento?", "acceptedAnswer": {"@type": "Answer", "text": "As condições ficam na proposta, antes de começar. Nos projetos sob medida, uma entrada na assinatura e o restante por etapa entregue."}}, {"@type": "Question", "name": "O atendimento é presencial?", "acceptedAnswer": {"@type": "Answer", "text": "É remoto, por vídeo e WhatsApp, para empresas de todo o Brasil."}}, {"@type": "Question", "name": "E depois da entrega?", "acceptedAnswer": {"@type": "Answer", "text": "A manutenção mensal, de R$ 300 a R$ 600, cuida de hospedagem, segurança, cópia de segurança e pequenos ajustes. É opcional."}}, {"@type": "Question", "name": "E se eu precisar de algo que não está aqui?", "acceptedAnswer": {"@type": "Answer", "text": "Aplicativo, sistema interno ou integração maior viram projeto sob medida. Na conversa de 30 minutos o sócio diz se é o caso."}}]}]}</script>
 </head>
 <body>
-    <header class="header">
-        <div class="container header-content">
-            <a href="#" class="logo">
-                <img src="images/logo.png" alt="ImpulsoTech">
-            </a>
-            <nav class="nav">
-                <a href="#servicos">Serviços</a>
-                <a href="#diferencial">Diferencial</a>
-                <a href="#galeria">Galeria</a>
-                <a href="#contato" class="btn-contact">Entre em contato</a>
-            </nav>
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Impulsotech, página inicial"><img src="/images/logo.webp" alt="Impulsotech" width="148" height="24"></a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="menu" aria-label="Principal">
+      <a href="/ofertas/">Ofertas e preços</a>
+      <a href="/#como-funciona" aria-current="page">Como funciona</a>
+      <a href="/#casos" aria-current="page">Casos</a>
+      <a href="/#perguntas" aria-current="page">Perguntas</a>
+      <a class="btn btn-primary" href="/#contato">Falar com um sócio</a>
+    </nav>
+  </div>
+</header>
+<main id="conteudo">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Para pequenas e médias empresas</span>
+      <h1>Site, automação e painel com <span class="grad-text">preço fechado</span> e prazo no contrato.</h1>
+      <p class="lead">A Impulsotech resolve o que mais trava a sua operação hoje: o site que não traz contato, a tarefa repetida que toma o dia da equipe ou o número que ninguém consegue ver. Escopo numa página, preço antes de começar e um sócio responsável do início ao fim.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#contato">Conversar 30 minutos com um sócio <span class="arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="btn btn-ghost" href="/ofertas/">Ver ofertas e preços</a>
+      </div>
+      <ul class="proof"><li>A partir de R$ 2.500</li><li>Entrega de 10 dias úteis a 2 semanas</li><li>Conversa sem custo</li></ul>
+    </div>
+    <div class="hero-art" aria-hidden="false">
+      <img class="astro" src="/images/astronauta.webp" alt="" width="640" height="947" fetchpriority="high">
+      <a class="tag tag-1" href="/ofertas/site/"><strong>Site profissional</strong><span class="price">a partir de R$ 3.500</span><span>10 dias úteis</span></a><a class="tag tag-2" href="/ofertas/automacao/"><strong>Automação de processo</strong><span class="price">a partir de R$ 2.500</span><span>1 a 2 semanas</span></a><a class="tag tag-3" href="/ofertas/painel/"><strong>Painel de indicadores</strong><span class="price">a partir de R$ 4.000</span><span>2 semanas</span></a>
+    </div>
+  </div>
+</section>
 
-    <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <h1>Seu app no ar em <span class="highlight-cyan">semanas</span>, não meses. Com <span class="highlight-purple">código profissional</span>.</h1>
-                    <p>Combinamos vibe coding, ferramentas no-code e desenvolvimento tradicional para entregar projetos até 3x mais rápido — sem abrir mão de qualidade, escalabilidade e manutenção profissional.</p>
-                    <div class="powered-badge">🚀 Powered by <a href="https://studio.impulsotech.dev" target="_blank"><img src="images/impulso-studio-logo.png" alt="Impulso Studio" class="impulso-studio-logo"></a> — nossa plataforma proprietária de gestão</div>
-                    <a href="https://wa.me/5521968189174" class="btn-primary">AGENDAR CONVERSA DE 15 MIN</a>
-                </div>
-                <div class="hero-image">
-                    <div class="glow-effect"></div>
-                    <img src="images/astronauta.png" alt="Astronauta ImpulsoTech">
-                </div>
-            </div>
-        </section>
+<section class="section section-alt" id="ofertas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ofertas</span>
+      <h2>Comece pelo que mais trava hoje.</h2>
+      <p>Três entregas com escopo fechado. Cada uma resolve um problema concreto e cabe no caixa de uma empresa pequena.</p>
+    </div>
+    <div class="offers">
+      <article class="offer reveal">
+        <p class="pain">“O site não traz contato, ou a empresa nem tem um.”</p>
+        <h3>Site profissional</h3>
+        <div class="price-line"><span class="from">a partir de</span><span class="value">R$ 3.500</span><span class="meta">Entrega em 10 dias úteis</span></div>
+        <ul class="checks"><li>Até 5 páginas, pensadas primeiro para o celular</li><li>Botão de WhatsApp e formulário de contato</li><li>Publicado no seu domínio, com Google Search Console</li></ul>
+        <a class="link" href="/ofertas/site/">Ver o que entra e o que não entra →</a>
+      </article>
+      <article class="offer reveal">
+        <p class="pain">“A equipe passa o dia copiando dado de um lugar para outro.”</p>
+        <h3>Automação de processo</h3>
+        <div class="price-line"><span class="from">a partir de</span><span class="value">R$ 2.500</span><span class="meta">Entrega em 1 a 2 semanas</span></div>
+        <ul class="checks"><li>Um processo, ligando até 3 ferramentas</li><li>Teste com dados reais antes de ligar</li><li>Aviso automático quando algo falhar</li></ul>
+        <a class="link" href="/ofertas/automacao/">Ver o que entra e o que não entra →</a>
+      </article>
+      <article class="offer reveal">
+        <p class="pain">“Ninguém sabe o número do mês sem montar uma planilha.”</p>
+        <h3>Painel de indicadores</h3>
+        <div class="price-line"><span class="from">a partir de</span><span class="value">R$ 4.000</span><span class="meta">Entrega em 2 semanas</span></div>
+        <ul class="checks"><li>Até 8 indicadores e 2 fontes de dados</li><li>Atualização automática todo dia</li><li>No navegador e no celular, com login</li></ul>
+        <a class="link" href="/ofertas/painel/">Ver o que entra e o que não entra →</a>
+      </article>
+    </div>
+    <div class="ladder">
+      <div class="ladder-card reveal" id="manutencao">
+        <span class="kicker">Depois da entrega</span>
+        <h3>Manutenção mensal</h3>
+        <p>Hospedagem, certificado de segurança, cópia de segurança, monitoramento e pequenos ajustes no que foi entregue.</p>
+        <span class="value">R$ 300 a R$ 600 por mês</span>
+      </div>
+      <div class="ladder-card reveal">
+        <span class="kicker">Quando o negócio pede mais</span>
+        <h3>Projeto sob medida</h3>
+        <p>Sistema interno, portal do cliente, aplicativo ou integração entre sistemas, com cronograma e pagamento por etapa.</p>
+        <span class="value">R$ 10.000 a R$ 40.000 · 4 a 12 semanas</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <section class="tools">
-            <div class="container">
-                <p class="section-subtitle">Trabalhamos com as melhores ferramentas do mercado</p>
-                <div class="tech-grid">
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #1d4ed8, #0ea5e9);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/cursor.svg" alt="Cursor" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Cursor</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #7c2d12, #ea580c);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/claude-code.svg" alt="Claude Code" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Claude Code</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #b45309, #f97316);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/ubuntu.svg" alt="Ubuntu" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Ubuntu</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #334155, #0f172a);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/openai.svg" alt="OpenAI" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>OpenAI</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #14532d, #16a34a);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/supabase.svg" alt="Supabase" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Supabase</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #0b3b66, #2563eb);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/docker.svg" alt="Docker" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Docker</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #4c1d95, #a21caf);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/n8n.svg" alt="n8n" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>n8n</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #115e59, #0f766e);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/ollama.svg" alt="Ollama" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Ollama</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #111827, #374151);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/github.svg" alt="GitHub" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>GitHub</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #7f1d1d, #ef4444);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/oracle.svg" alt="Oracle" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Oracle</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #155e75, #06b6d4);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/cloudflare.svg" alt="Cloudflare" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Cloudflare</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #1e3a8a, #2563eb);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/postgresql.svg" alt="PostgreSQL" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>PostgreSQL</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #075985, #0284c7);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/mysql.svg" alt="MySQL" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>MySQL</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #0f766e, #14b8a6);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/neon.svg" alt="Neon SQL" class="tech-logo tech-logo-no-filter" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Neon SQL</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #4c1d95, #6366f1);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/replit.svg" alt="Replit" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Replit</h3>
-                    </article>
-                    <article class="tech-card">
-                        <div class="tech-badge" style="--tech-fill: linear-gradient(135deg, #0f172a, #1e293b);">
-                            <div class="tech-badge-inner">
-                                <img src="images/tech/bubble-io.svg" alt="Bubble.io" class="tech-logo" loading="lazy">
-                            </div>
-                        </div>
-                        <h3>Bubble.io</h3>
-                    </article>
-                </div>
-            </div>
-        </section>
+<section class="section" id="como-funciona">
+  <div class="wrap steps-grid">
+    <div>
+      <div class="section-head reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2>Da conversa à entrega, sem surpresa no meio.</h2>
+        <p>Você sabe o escopo, o preço e o prazo antes de assinar. E sabe quem chamar se precisar.</p>
+      </div>
+      <ol class="steps"><li class="reveal"><div><h3>Conversa de 30 minutos</h3><p>Por vídeo, com um dos sócios, sem custo. Você conta onde a empresa trava e sai sabendo qual oferta resolve.</p></div></li><li class="reveal"><div><h3>Proposta de uma página</h3><p>Escopo, preço, prazo e o que não está incluído, numa página só. Oferta pequena costuma fechar na própria conversa.</p></div></li><li class="reveal"><div><h3>Entrega com sócio responsável</h3><p>Um sócio acompanha do começo ao fim e é quem você chama. Você aprova cada etapa antes da seguinte.</p></div></li><li class="reveal"><div><h3>Manutenção, se fizer sentido</h3><p>Depois da entrega, a manutenção mensal cuida de hospedagem, segurança e pequenos ajustes.</p></div></li></ol>
+    </div>
+    <div class="reveal">
+      <div class="proposal" aria-label="Exemplo de proposta de uma página">
+        <div class="p-head"><strong>Proposta · Site profissional</strong><span>Exemplo<br>uma página</span></div>
+        <dl>
+          <dt>Escopo</dt><dd>5 páginas: início, sobre, serviços, oferta e contato. Botão de WhatsApp e formulário.</dd>
+          <dt>Não inclui</dt><dd>Loja virtual, fotos e textos do zero, anúncios.</dd>
+          <dt>Prazo</dt><dd>10 dias úteis a partir do envio dos textos e do logotipo.</dd>
+          <dt>Responsável</dt><dd>Um sócio da Impulsotech, do briefing à publicação.</dd>
+          <dt>Depois</dt><dd>Manutenção mensal opcional.</dd>
+        </dl>
+        <div class="total"><span>Preço fechado</span><b>R$ 4.500</b></div>
+        <div class="sign"><div>Cliente</div><div>Impulsotech</div></div>
+      </div>
+      <p class="proposal-note">Toda entrega começa com uma proposta assim: uma página, preço fechado.</p>
+    </div>
+  </div>
+</section>
 
-        <section class="methodology" id="diferencial">
-            <div class="container">
-                <p class="section-label">Nossa metodologia</p>
-                <h2>Como transformamos sua ideia em produto digital</h2>
-                <p class="section-description">Velocidade de startup com robustez enterprise</p>
-                <p class="methodology-text">Cada projeto começa com uma análise profunda do seu negócio. Escolhemos a stack ideal entre no-code, low-code ou desenvolvimento tradicional com base em três critérios: prazo, orçamento e escalabilidade futura. Você não fica preso a uma única tecnologia — fica com a solução certa.</p>
-                
-                <div class="methodology-cards">
-                    <div class="method-card">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                <path d="M3 9h18"/>
-                                <path d="M9 21V9"/>
-                            </svg>
-                        </div>
-                        <h3>Design de Experiência</h3>
-                        <p>Interfaces que funcionam para usuários reais — testamos com pessoas de verdade, não com suposições.</p>
-                    </div>
-                    <div class="method-card">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M2 12h20"/>
-                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                            </svg>
-                        </div>
-                        <h3>Sistemas Web</h3>
-                        <p>Aplicações que aguentam crescimento. Arquitetura pensada para integrar e escalar quando o negócio decolar.</p>
-                    </div>
-                    <div class="method-card">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="5" y="2" width="14" height="20" rx="2"/>
-                                <path d="M12 18h.01"/>
-                            </svg>
-                        </div>
-                        <h3>Aplicativos</h3>
-                        <p>Apps nativos ou híbridos com experiência fluida. Do MVP para validação até milhares de usuários.</p>
-                    </div>
-                    <div class="method-card">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                <path d="M2 17l10 5 10-5"/>
-                                <path d="M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                        <h3>Inteligência Artificial</h3>
-                        <p>IA com propósito: chatbots que resolvem, automações que economizam horas, análises que geram decisões.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="section section-alt" id="combinado">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">O combinado</span>
+      <h2>Quatro regras que valem para toda entrega.</h2>
+    </div>
+    <div class="rules"><div class="rule reveal"><span class="n">01</span><h3>Preço fechado antes de começar</h3><p>Você sabe quanto vai pagar antes de assinar. Sem hora técnica correndo.</p></div><div class="rule reveal"><span class="n">02</span><h3>Prazo no contrato</h3><p>O prazo de entrega está escrito na proposta, contado a partir do que você precisa enviar.</p></div><div class="rule reveal"><span class="n">03</span><h3>Um sócio responde pela entrega</h3><p>Nada de atendimento por fila. Um dos três sócios cuida do seu projeto.</p></div><div class="rule reveal"><span class="n">04</span><h3>Fora do escopo é proposta nova</h3><p>O que não estava combinado vira outra proposta, com preço antes. Nunca cobrança surpresa.</p></div></div>
+  </div>
+</section>
 
-        <section class="metrics">
-            <div class="container">
-                <div class="metrics-grid">
-                    <div class="metric-item">
-                        <span class="metric-number">+40</span>
-                        <span class="metric-label">Projetos entregues</span>
-                    </div>
-                    <div class="metric-item">
-                        <span class="metric-number">12</span>
-                        <span class="metric-label">Clientes ativos</span>
-                    </div>
-                    <div class="metric-item">
-                        <span class="metric-number">3x</span>
-                        <span class="metric-label">Mais rápido que dev tradicional</span>
-                    </div>
-                    <div class="metric-item">
-                        <span class="metric-number">100%</span>
-                        <span class="metric-label">Projetos com documentação</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="section" id="casos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Casos</span>
+      <h2>Projetos que já estão no ar.</h2>
+      <p>Sites, sistemas e painéis entregues pela Impulsotech.</p>
+    </div>
+    <div class="cases"><figure class="case reveal"><img src="/images/cases/onlycaes.webp" alt="Tela do projeto OnlyCães" width="1200" height="527" loading="lazy"><figcaption><strong>OnlyCães</strong><span>Serviços pet</span></figcaption></figure><figure class="case reveal"><img src="/images/cases/melhorpix.webp" alt="Tela do projeto Melhor Pix" width="1200" height="527" loading="lazy"><figcaption><strong>Melhor Pix</strong><span>Gestão de vendas</span></figcaption></figure><figure class="case reveal"><img src="/images/cases/cotefy.webp" alt="Tela do projeto Cotefy" width="1200" height="527" loading="lazy"><figcaption><strong>Cotefy</strong><span>Painel de SaaS</span></figcaption></figure><figure class="case reveal"><img src="/images/cases/sysbot.webp" alt="Tela do projeto Sysbot" width="1200" height="527" loading="lazy"><figcaption><strong>Sysbot</strong><span>Software de LGPD</span></figcaption></figure><figure class="case reveal"><img src="/images/cases/wifinity.webp" alt="Tela do projeto Wifinity" width="1200" height="527" loading="lazy"><figcaption><strong>Wifinity</strong><span>Gestão de clientes</span></figcaption></figure><figure class="case reveal"><img src="/images/cases/vibebooks.webp" alt="Tela do projeto Vibebooks" width="1200" height="527" loading="lazy"><figcaption><strong>Vibebooks</strong><span>Plataforma de livros</span></figcaption></figure></div>
+    <div class="logos reveal"><span>Também atendemos</span><img src="/images/clients/fips.png" alt="FIPS" width="110" height="35" loading="lazy"><img src="/images/clients/emply.png" alt="Emply" width="71" height="34" loading="lazy"></div>
+  </div>
+</section>
 
-        <section class="clients" id="galeria">
-            <div class="container">
-                <h2>Empresas que confiam na ImpulsoTech</h2>
-                <p class="section-description">Projetos que tiramos do papel — do conceito ao produto digital funcionando</p>
+<section class="section section-alt" id="socios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Quem responde</span>
+      <h2>Três sócios. Um deles cuida da sua entrega.</h2>
+      <p>Cada projeto tem um sócio responsável, que aprova as etapas com você e é quem você chama quando precisar.</p>
+    </div>
+    <div class="partners"><div class="partner reveal"><span class="avatar" aria-hidden="true">LM</span><div><strong>Luiz Melo</strong><span>Sócio da Impulsotech</span></div></div><div class="partner reveal"><span class="avatar" aria-hidden="true">DP</span><div><strong>Diogo Paiva</strong><span>Sócio da Impulsotech</span></div></div><div class="partner reveal"><span class="avatar" aria-hidden="true">FL</span><div><strong>Fellipe Lopes</strong><span>Sócio da Impulsotech</span></div></div></div>
+  </div>
+</section>
 
-                <div class="clients-grid">
-                    <article class="client-card">
-                        <div class="client-logo-wrap client-logo-wrap-melhorpix">
-                            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663179084553/WKstTWyKAumbhbAf.png" alt="Melhor Pix" class="client-logo">
-                        </div>
-                    </article>
+<section class="section" id="perguntas">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Perguntas</span>
+      <h2>O que todo mundo pergunta antes de contratar.</h2>
+    </div>
+    <div class="faq"><details class="reveal"><summary>Quanto custa?</summary><p class="answer">Site profissional a partir de R$ 3.500, automação a partir de R$ 2.500 e painel a partir de R$ 4.000. O valor exato sai na proposta de uma página, antes de começar. Projetos sob medida ficam entre R$ 10 mil e R$ 40 mil.</p></details><details class="reveal"><summary>Em quanto tempo fica pronto?</summary><p class="answer">Site em 10 dias úteis, automação em 1 a 2 semanas e painel em 2 semanas, contados a partir do envio do material e dos acessos.</p></details><details class="reveal"><summary>Quem faz o trabalho?</summary><p class="answer">A equipe da Impulsotech, coordenada por um dos três sócios, que é quem fala com você do começo ao fim.</p></details><details class="reveal"><summary>Como funciona o pagamento?</summary><p class="answer">As condições ficam na proposta, antes de começar. Nos projetos sob medida, uma entrada na assinatura e o restante por etapa entregue.</p></details><details class="reveal"><summary>O atendimento é presencial?</summary><p class="answer">É remoto, por vídeo e WhatsApp, para empresas de todo o Brasil.</p></details><details class="reveal"><summary>E depois da entrega?</summary><p class="answer">A manutenção mensal, de R$ 300 a R$ 600, cuida de hospedagem, segurança, cópia de segurança e pequenos ajustes. É opcional.</p></details><details class="reveal"><summary>E se eu precisar de algo que não está aqui?</summary><p class="answer">Aplicativo, sistema interno ou integração maior viram projeto sob medida. Na conversa de 30 minutos o sócio diz se é o caso.</p></details></div>
+  </div>
+</section>
 
-                    <article class="client-card">
-                        <div class="client-logo-wrap client-logo-wrap-emply">
-                            <img src="images/clients/emply.png" alt="Emply" class="client-logo">
-                        </div>
-                    </article>
-
-                    <article class="client-card">
-                        <div class="client-logo-wrap client-logo-wrap-afon">
-                            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663179084553/omwTCIHdsHsTiFCN.png" alt="Afon" class="client-logo client-logo-afon">
-                        </div>
-                    </article>
-
-                    <article class="client-card">
-                        <div class="client-logo-wrap client-logo-wrap-sysbot">
-                            <img src="images/clients/sysbot.svg" alt="Sysbot" class="client-logo client-logo-sysbot">
-                        </div>
-                    </article>
-
-                    <article class="client-card">
-                        <div class="client-logo-wrap client-logo-wrap-fips">
-                            <img src="images/clients/fips.png" alt="FIPS" class="client-logo">
-                        </div>
-                    </article>
-
-                    <article class="client-card">
-                        <div class="client-logo-wrap client-logo-wrap-nooklead">
-                            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663179084553/JDIImdzCvrtlwAaU.png" alt="Nooklead" class="client-logo client-logo-nooklead">
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="comparison">
-            <div class="container">
-                <h2>Por que escolher a ImpulsoTech?</h2>
-                <p class="section-description comparison-subtitle">O melhor custo-benefício entre velocidade, qualidade e preço</p>
-                <div class="comparison-table three-cols">
-                    <div class="table-header">
-                        <div class="col-criteria">Critério</div>
-                        <div class="col-impulso">ImpulsoTech</div>
-                        <div class="col-agencies">Agências Tradicionais</div>
-                        <div class="col-freelancers">Freelancers No-Code</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="col-criteria">Prazo de entrega</div>
-                        <div class="col-impulso"><span class="highlight-text">Semanas</span></div>
-                        <div class="col-agencies"><span class="neutral-text">Meses</span></div>
-                        <div class="col-freelancers"><span class="neutral-text">Semanas</span></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="col-criteria">Escalabilidade</div>
-                        <div class="col-impulso"><span class="highlight-text">Alta</span></div>
-                        <div class="col-agencies"><span class="neutral-text">Alta</span></div>
-                        <div class="col-freelancers"><span class="warning-text">Limitada</span></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="col-criteria">Custo inicial</div>
-                        <div class="col-impulso"><span class="highlight-text">Médio</span></div>
-                        <div class="col-agencies"><span class="warning-text">Alto</span></div>
-                        <div class="col-freelancers"><span class="neutral-text">Baixo</span></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="col-criteria">Suporte pós-entrega</div>
-                        <div class="col-impulso"><span class="check">✓ Contínuo</span></div>
-                        <div class="col-agencies"><span class="neutral-text">Por contrato</span></div>
-                        <div class="col-freelancers"><span class="x">✕ Variável</span></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="col-criteria">Flexibilidade de stack</div>
-                        <div class="col-impulso"><span class="check">✓</span></div>
-                        <div class="col-agencies"><span class="x">✕</span></div>
-                        <div class="col-freelancers"><span class="x">✕</span></div>
-                    </div>
-                    <div class="table-row">
-                        <div class="col-criteria">Documentação técnica</div>
-                        <div class="col-impulso"><span class="check">✓</span></div>
-                        <div class="col-agencies"><span class="check">✓</span></div>
-                        <div class="col-freelancers"><span class="x">✕</span></div>
-                    </div>
-                    <div class="table-row highlight-row">
-                        <div class="col-criteria">Ferramenta própria de gestão</div>
-                        <div class="col-impulso"><span class="check">✓ <a href="https://studio.impulsotech.dev" target="_blank"><img src="images/impulso-studio-logo.png" alt="Impulso Studio" class="impulso-studio-logo-table"></a></span></div>
-                        <div class="col-agencies"><span class="x">✕ Dependem de terceiros</span></div>
-                        <div class="col-freelancers"><span class="x">✕ Ferramentas genéricas</span></div>
-                    </div>
-                </div>
-                <p class="comparison-impact">Se conseguimos construir uma plataforma com +66.000 linhas de código para uso interno, imagine o que entregamos para você.</p>
-            </div>
-        </section>
-
-        <section class="services" id="servicos">
-            <div class="container">
-                <div class="services-header">
-                    <div>
-                        <h2>Nossos Serviços</h2>
-                        <p class="section-description">Entregas objetivas para reduzir gargalos, acelerar operação e manter controle técnico.</p>
-                    </div>
-                    <a href="servicos.html" class="services-all-link">Ver todos os serviços</a>
-                </div>
-                
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="5" y="2" width="14" height="20" rx="2"/>
-                                <path d="M12 18h.01"/>
-                            </svg>
-                        </div>
-                        <h3>Criação de Aplicativos</h3>
-                        <p>Produtos web e mobile com arquitetura para crescer sem retrabalho.</p>
-                        <ul>
-                            <li>Aplicativos web responsivos</li>
-                            <li>Sistemas internos</li>
-                            <li>MVPs rápidos</li>
-                        </ul>
-                        <a href="servico-apps.html" class="service-link">Ver serviço</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
-                            </svg>
-                        </div>
-                        <h3>Automação de Processos</h3>
-                        <p>Fluxos automáticos para eliminar tarefas repetitivas e reduzir erro operacional.</p>
-                        <ul>
-                            <li>Fluxos automatizados</li>
-                            <li>Sincronização de dados</li>
-                            <li>API de Integrações</li>
-                        </ul>
-                        <a href="servico-automacoes.html" class="service-link">Ver serviço</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 3v18h18"/>
-                                <path d="M18 17V9"/>
-                                <path d="M13 17V5"/>
-                                <path d="M8 17v-3"/>
-                            </svg>
-                        </div>
-                        <h3>Painéis e Relatórios</h3>
-                        <p>Indicadores confiáveis para decidir com dados e não com suposições.</p>
-                        <ul>
-                            <li>Painéis interativos</li>
-                            <li>Relatórios automatizados</li>
-                            <li>KPIs em tempo real</li>
-                        </ul>
-                        <a href="servico-paineis.html" class="service-link">Ver serviço</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <path d="M22 6l-10 7L2 6"/>
-                            </svg>
-                        </div>
-                        <h3>Integração de Sistemas</h3>
-                        <p>Conexão entre ferramentas e bases para uma operação sem ilhas de informação.</p>
-                        <ul>
-                            <li>APIs personalizadas</li>
-                            <li>Sincronização de dados</li>
-                            <li>Sistemas legados</li>
-                        </ul>
-                        <a href="servico-integracoes.html" class="service-link">Ver serviço</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2"/>
-                                <path d="M8 21h8"/>
-                                <path d="M12 17v4"/>
-                            </svg>
-                        </div>
-                        <h3>Servidores Self-Hosted</h3>
-                        <p>Infraestrutura própria para dados críticos, com previsibilidade de custo.</p>
-                        <ul>
-                            <li>Infraestrutura própria</li>
-                            <li>Segurança avançada</li>
-                            <li>Controle total</li>
-                        </ul>
-                        <a href="servico-self-hosted.html" class="service-link">Ver serviço</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="3"/>
-                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                            </svg>
-                        </div>
-                        <h3>Consultoria Estratégica</h3>
-                        <p>Direcionamento técnico para priorizar investimento e acelerar entrega.</p>
-                        <ul>
-                            <li>Análise de processos</li>
-                            <li>Roadmap tecnológico</li>
-                            <li>Treinamento de equipe</li>
-                        </ul>
-                        <a href="servico-consultoria.html" class="service-link">Ver serviço</a>
-                    </div>
-                    <div class="service-card service-card-featured">
-                        <figure class="service-media">
-                            <img src="images/services/services-featured-ia.svg" alt="Mockup do Impulso Core com chat corporativo e fontes rastreáveis" loading="lazy">
-                        </figure>
-                        <p class="service-featured-kicker">Destaque</p>
-                        <h3>Impulso Core — IA privada para sua operação</h3>
-                        <p>Leve IA generativa para dentro da empresa com controle de dados, fontes rastreáveis e autonomia para o time.</p>
-                        <ul>
-                            <li>100% on-premise para dados sensíveis</li>
-                            <li>Base interna com respostas citadas</li>
-                            <li>Relatórios em linguagem natural</li>
-                        </ul>
-                        <div class="service-featured-actions">
-                            <a href="ia.html" class="btn-primary">Conhecer Impulso Core</a>
-                            <a href="servicos.html" class="service-link">Comparar todos os serviços</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-form" id="contato">
-            <div class="container">
-                <div class="form-wrapper">
-                    <div class="form-content">
-                        <h2>Receba um Diagnóstico Gratuito do seu Negócio</h2>
-                        <p>Identifique oportunidades de automação e otimização nos seus processos. Nossa análise gratuita mostra exatamente onde a tecnologia pode impulsionar seus resultados.</p>
-                        
-                        <div class="benefits">
-                            <div class="benefit">
-                                <span class="check-icon">✓</span>
-                                <span>Análise completa dos seus processos</span>
-                            </div>
-                            <div class="benefit">
-                                <span class="check-icon">✓</span>
-                                <span>Identificação de oportunidades</span>
-                            </div>
-                            <div class="benefit">
-                                <span class="check-icon">✓</span>
-                                <span>Roadmap personalizado</span>
-                            </div>
-                            <div class="benefit">
-                                <span class="check-icon">✓</span>
-                                <span>Estimativa de ROI</span>
-                            </div>
-                        </div>
-                    </div>
-                    <form class="form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nome completo *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="whatsapp">WhatsApp *</label>
-                            <input type="tel" id="whatsapp" name="whatsapp" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="challenge">Qual seu maior desafio tecnológico hoje? *</label>
-                            <textarea id="challenge" name="challenge" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Enviar Solicitação</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="case-study">
-            <div class="container">
-                <h2>Casos de Sucesso</h2>
-                <p class="section-description">Projetos que transformaram negócios e geraram resultados reais.</p>
-                
-                <div class="case-carousel">
-                    <div class="case-badge" id="caseBadge">SYSBOT - SOFTWARE LGPD</div>
-                    <div class="case-slider" id="caseSlider">
-                        <div class="case-slide active" data-title="SYSBOT - SOFTWARE LGPD">
-                            <img src="images/cases/sysbot.png" alt="Sysbot">
-                        </div>
-                        <div class="case-slide" data-title="ONLYCÃES - SERVIÇOS PET">
-                            <img src="images/cases/onlycaes.png" alt="OnlyCães">
-                        </div>
-                        <div class="case-slide" data-title="MELHOR PIX - GESTÃO DE VENDAS">
-                            <img src="images/cases/melhorpix.png" alt="Melhor Pix">
-                        </div>
-                        <div class="case-slide" data-title="WIFINITY - GESTÃO DE CLIENTES">
-                            <img src="images/cases/wifinity.png" alt="Wifinity">
-                        </div>
-                        <div class="case-slide" data-title="COTEFY - DASHBOARD SAAS">
-                            <img src="images/cases/cotefy.png" alt="Cotefy">
-                        </div>
-                        <div class="case-slide" data-title="VIBEBOOKS - PLATAFORMA DE LIVROS">
-                            <img src="images/cases/vibebooks.png" alt="Vibebooks">
-                        </div>
-                        <div class="case-slide" data-title="NOOKLEAD - GERAÇÃO DE LEADS">
-                            <img src="images/cases/nooklead.png" alt="Nooklead">
-                        </div>
-                    </div>
-                    <div class="case-nav">
-                        <button class="case-nav-btn prev" id="casePrev">&#10094;</button>
-                        <div class="case-dots" id="caseDots"></div>
-                        <button class="case-nav-btn next" id="caseNext">&#10095;</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="team">
-            <div class="container">
-                <h2>Nossa Equipe de Especialistas</h2>
-                <p class="section-description">Profissionais experientes que transformam ideias em soluções digitais inovadoras</p>
-                
-                <div class="team-grid">
-                    <div class="team-card">
-                        <div class="member-image">
-                            <img src="https://booth-shield-23476833.figma.site/_assets/v11/503f29041a8cd0ada8dc24877a1769ffd2837d5e.png" alt="Luiz Melo">
-                        </div>
-                        <h3>Luiz Melo</h3>
-                        <p class="role">CTO & Arquiteto de Soluções</p>
-                        <p class="description">Transforma complexidade em sistemas que funcionam</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="member-image">
-                            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663117625661/YlUJlOxKAkSUaVVc.png" alt="Álvaro Medeiros">
-                        </div>
-                        <h3>Álvaro Medeiros</h3>
-                        <p class="role">Desenvolvedor FullStack</p>
-                        <p class="description">Do banco de dados à interface — código limpo e escalável</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="member-image">
-                            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663117625661/NhUUxFqgfWzuwJVh.png" alt="Kevin Arend">
-                        </div>
-                        <h3>Kevin Arend</h3>
-                        <p class="role">Product Owner</p>
-                        <p class="description">Conecta visão de negócio com entrega técnica</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="member-image">
-                            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663117625661/wfimlaDxjTaytiOo.png" alt="Erivanildo Martiniano">
-                        </div>
-                        <h3>Erivanildo Martiniano</h3>
-                        <p class="role">UI/UX Designer</p>
-                        <p class="description">Design que converte, não apenas impressiona</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="member-image">
-                            <img src="images/fellipe-lope.png" alt="Fellipe Lope">
-                        </div>
-                        <h3>Fellipe Lope</h3>
-                        <p class="role">Documentação Técnica</p>
-                        <p class="description">Seu projeto explicado para qualquer dev assumir</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-bg">
-            <div class="container footer-content">
-                <div class="footer-info">
-                    <div class="footer-logo">
-                        <img src="images/logo.png" alt="ImpulsoTech">
-                    </div>
-                    <p class="footer-company">2025 - IMPULSOTECH DESENVOLVIMENTO LTDA</p>
-                    <p class="footer-legal">Todos os direitos reservados</p>
-                    <p class="footer-cnpj">CNPJ: 56.190.504/0001-76</p>
-                    <div class="footer-legal-links">
-                        <a href="politica_privacidade.html">Política de Privacidade</a>
-                        <span>|</span>
-                        <a href="termos_de_uso.html">Termos de Uso</a>
-                    </div>
-                </div>
-                <div class="footer-contact">
-                    <a href="mailto:contato@impulsotech.dev" class="footer-email">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        contato@impulsotech.dev
-                    </a>
-                </div>
-                <div class="footer-social">
-                    <a href="https://wa.me/5521968189174" target="_blank" aria-label="WhatsApp">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=100095534735180" target="_blank" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/impulsotech/" target="_blank" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    </a>
-                    <a href="https://www.instagram.com/impulsotech.dev/" target="_blank" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
-                    </a>
-                    <a href="https://www.youtube.com/@ImpulsoTech" target="_blank" aria-label="YouTube">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </a>
-                </div>
-                <div class="footer-astronaut">
-                    <img src="images/astronauta-footer.png" alt="Astronauta">
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="i18n-translations.js"></script>
-    <script src="script.js"></script>
+<section class="section section-alt" id="contato">
+  <div class="wrap contact">
+    <div class="contact-copy reveal">
+      <span class="eyebrow">Conversa de 30 minutos</span>
+      <h2>Conte onde a sua empresa trava.</h2>
+      <p>Em 30 minutos, por vídeo, um dos sócios diz qual oferta resolve e quanto custa. Sem custo e sem compromisso.</p>
+      <ul class="direct">
+        <li><b>WhatsApp</b><a href="#" data-wa="Olá! Vim pelo site da Impulsotech.">(21) 96818-9174</a></li>
+        <li><b>E-mail</b><span>contato@impulsotech.dev</span></li>
+      </ul>
+    </div>
+    <form class="form reveal" id="form-contato" novalidate>
+      <div class="row">
+        <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required></div>
+        <div class="field"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" autocomplete="organization" required></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="f-whats">WhatsApp</label><input id="f-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" required></div>
+        <div class="field"><label for="f-oferta">O que você precisa</label><select id="f-oferta" name="oferta"><option>Site profissional</option><option>Automação de processo</option><option>Painel de indicadores</option><option>Projeto sob medida</option><option selected>Ainda não sei</option></select></div>
+      </div>
+      <div class="field"><label for="f-msg">Em uma frase, onde a empresa trava hoje?</label><textarea id="f-msg" name="mensagem" placeholder="Ex.: os pedidos chegam pelo WhatsApp e alguém digita tudo na planilha."></textarea></div>
+      <button class="btn btn-primary" type="submit">Enviar pelo WhatsApp <span class="arrow" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+      <p class="hint" id="form-hint">O formulário abre o WhatsApp com a mensagem pronta. Respondemos em horário comercial.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/images/logo.webp" alt="Impulsotech" width="132" height="21" loading="lazy">
+        <p>Site, automação e painel para pequenas e médias empresas, com preço fechado e prazo no contrato.</p>
+      </div>
+      <div>
+        <h4>Ofertas</h4>
+        <ul><li><a href="/ofertas/site/">Site profissional</a></li><li><a href="/ofertas/automacao/">Automação de processo</a></li><li><a href="/ofertas/painel/">Painel de indicadores</a></li><li><a href="/ofertas/#manutencao">Manutenção mensal</a></li><li><a href="/ofertas/#projeto">Projeto sob medida</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="/#contato">Conversar com um sócio</a></li>
+          <li><a href="#" data-wa="Olá! Vim pelo site da Impulsotech.">WhatsApp (21) 96818-9174</a></li>
+          <li>contato@impulsotech.dev</li>
+          <li><a href="/politica_privacidade.html">Política de Privacidade</a></li>
+          <li><a href="/termos_de_uso.html">Termos de Uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© <span data-year>2026</span> Impulsotech Desenvolvimento Ltda</span>
+      <span>CNPJ 56.190.504/0001-76</span>
+    </div>
+  </div>
+</footer>
+<script src="/site.js" defer></script>
 </body>
 </html>
