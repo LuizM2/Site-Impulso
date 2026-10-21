@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).resolve().parent.parent
 PUBLIC_DIR = ROOT_DIR / "public"
 ROOT_PATTERNS = ("*.html", "*.css", "*.js", "*.png", "*.txt", "*.xml")
-SERVED_DIRS = ("images", "ofertas")
+SERVED_DIRS = ("images", "ofertas", "casos")
 
 
 def main() -> None:
